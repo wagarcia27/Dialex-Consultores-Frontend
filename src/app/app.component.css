@@ -17,6 +17,27 @@
   color: black;
 }
 
+.contact-info {
+  display: flex;
+  gap: 50px; /* Espacio entre el teléfono y el correo */
+  align-items: center;
+}
+
+.social-btn {
+  display: inline-block;
+  margin-left: 10px; /* Espaciado entre los botones */
+}
+
+.social-btn img {
+  width: 30px; /* Tamaño del ícono */
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-btn img:hover {
+  transform: scale(1.1); /* Efecto al pasar el mouse */
+}
+
 .contact-info span {
   margin-right: 15px;
   font-weight: bold;

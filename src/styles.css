@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.logo {
+    width: 90px; /* Ajusta el tamaño según lo necesites */
+    height: auto; /* Mantiene la proporción */
+  }
+
+  

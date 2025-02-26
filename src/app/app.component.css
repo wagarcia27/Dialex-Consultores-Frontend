@@ -1,0 +1,64 @@
+/* === ESTILOS DEL HEADER === */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Top bar */
+  .top-bar {
+    background-color: #FFC107;
+    padding: 10px 0;
+    font-size: 14px;
+    color: black;
+  }
+  
+  .contact-info span {
+    margin-right: 15px;
+    font-weight: bold;
+  }
+  
+  /* Botón contáctanos */
+  .btn-contacto {
+    font-weight: bold;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Logo */
+  .logo {
+    height: 50px;
+  }
+  
+  /* Estilo para los enlaces del menú */
+  .navbar-nav .nav-link {
+    color: black !important;
+    font-weight: bold;
+    padding: 10px 15px;
+  }
+  
+  /* Estilo de enlace activo */
+  .navbar-nav .nav-link.active {
+    color: #FFC107 !important;
+    border-bottom: 2px solid #FFC107;
+  }
+  
+  /* Ajuste de espaciado para que no se superponga con el header */
+  body {
+    padding-top: 120px;
+  }
+  

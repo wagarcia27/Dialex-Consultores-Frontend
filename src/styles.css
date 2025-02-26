@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 .logo {
-    width: 150px; /* Ajusta el tamaño según lo necesites */
-    height: auto; /* Mantiene la proporción */
+    width: 100px; /* Ajusta el tamaño según lo necesites */
+    height: 100px;
   }
 
   .whatsapp-float {

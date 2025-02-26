@@ -1,64 +1,160 @@
 /* === ESTILOS DEL HEADER === */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Top Bar */
+.top-bar {
+  background-color: #FFC107;
+  padding: 10px 0;
+  font-size: 14px;
+  color: black;
+}
+
+.contact-info span {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+/* 🔹 Botón Contáctanos */
+.btn-contacto {
+  font-weight: bold;
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+/* 🔹 Navbar */
+.navbar {
+  background-color: white;
+  padding: 15px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  color: black !important;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.navbar-nav .nav-link.active {
+  color: #FFC107 !important;
+  border-bottom: 2px solid #FFC107;
+}
+
+/* 🔹 Ajuste de espaciado para que el body no se superponga con el header */
+body {
+  padding-top: 120px;
+}
+
+/* === MENÚ DESPLEGABLE ANIMADO === */
+
+/* 🔹 Contenedor del menú desplegable */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* 🔹 Hover expandido para detectar el mouse */
+.custom-dropdown:hover::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -30px;
+  width: calc(100% + 60px);
+  height: 62px;
+  background: green;
+}
+
+/* 🔹 Ocultar el menú por defecto */
+.custom-dropdown .dropdown-menu-container {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* 🔹 Mostrar menú al hacer hover */
+.custom-dropdown:hover .dropdown-menu-container,
+.dropdown-menu-container:hover {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 🔹 Forzar el cierre cuando se hace clic en una opción */
+.custom-dropdown.menu-hide .dropdown-menu-container {
+  display: none !important;
+}
+
+/* 🔹 Contenedor del dropdown grande */
+.dropdown-menu-container {
+  position: absolute;
+  top: calc(100% + 62px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95vw;
+  max-width: 1200px;
+  background: white;
+  border-top: 3px solid #f1c40f;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 150px;
+  margin-bottom: 10px;
+  pointer-events: auto;
+}
+
+/* 🔹 Contenedor interno con opciones */
+.dropdown-menu-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+/* 🔹 Cada opción en el menú */
+.dropdown-item {
+  flex: 1 1 calc(33.33% - 20px);
+  max-width: 350px;
+  min-width: 250px;
+  min-height: 100px;
+  padding: 15px;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* 🔹 Ajuste de columnas para pantallas más pequeñas */
+@media (max-width: 1024px) {
+  .dropdown-item {
+    flex: 1 1 calc(50% - 20px);
   }
-  
-  /* Top bar */
-  .top-bar {
-    background-color: #FFC107;
-    padding: 10px 0;
-    font-size: 14px;
-    color: black;
+}
+
+@media (max-width: 768px), (max-width: 480px) {
+  .dropdown-item {
+    flex: 1 1 100%;
   }
-  
-  .contact-info span {
-    margin-right: 15px;
-    font-weight: bold;
-  }
-  
-  /* Botón contáctanos */
-  .btn-contacto {
-    font-weight: bold;
-    padding: 8px 15px;
-    font-size: 14px;
-  }
-  
-  /* Navbar */
-  .navbar {
-    background-color: white;
-    padding: 15px 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Logo */
-  .logo {
-    height: 50px;
-  }
-  
-  /* Estilo para los enlaces del menú */
-  .navbar-nav .nav-link {
-    color: black !important;
-    font-weight: bold;
-    padding: 10px 15px;
-  }
-  
-  /* Estilo de enlace activo */
-  .navbar-nav .nav-link.active {
-    color: #FFC107 !important;
-    border-bottom: 2px solid #FFC107;
-  }
-  
-  /* Ajuste de espaciado para que no se superponga con el header */
-  body {
-    padding-top: 120px;
-  }
-  
+}

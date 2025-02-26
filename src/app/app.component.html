@@ -26,16 +26,37 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" routerLink="/" routerLinkActive="active">Inicio</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
-              Servicios
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" routerLink="/servicio1">Servicio 1</a></li>
-              <li><a class="dropdown-item" routerLink="/servicio2">Servicio 2</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown custom-dropdown" [ngClass]="{ 'menu-open': isMenuOpen }">
+              <span class="nav-link dropdown-toggle">Servicios</span>
+              <div class="dropdown-menu-container">
+                <div class="dropdown-menu-content">
+                  <a routerLink="/contabilidad" class="dropdown-item" (click)="cerrarMenu()">
+                    <h4>Contabilidad General</h4>
+                    <p>Organizamos información contable con estándares internacionales.</p>
+                  </a>
+                  <a routerLink="/tributacion" class="dropdown-item" (click)="cerrarMenu()">
+                    <h4>Tributación</h4>
+                    <p>Asesoría integral en planificación y cumplimiento tributario.</p>
+                  </a>
+                  <a routerLink="/costos" class="dropdown-item" (click)="cerrarMenu()">
+                    <h4>Costos Industriales y Comerciales</h4>
+                    <p>Información sobre costos para decisiones económicas.</p>
+                  </a>
+                  <a routerLink="/revisoria" class="dropdown-item" (click)="cerrarMenu()">
+                    <h4>Revisoría Fiscal</h4>
+                    <p>Aseguramos la integridad y cumplimiento normativo.</p>
+                  </a>
+                  <a routerLink="/auditoria-interna" class="dropdown-item" (click)="cerrarMenu()">
+                    <h4>Auditoría Interna</h4>
+                    <p>Optimización de controles internos y procesos administrativos.</p>
+                  </a>
+                  <a routerLink="/auditoria-externa" class="dropdown-item" (click)="cerrarMenu()">
+                    <h4>Auditoría Externa</h4>
+                    <p>Opiniones independientes sobre información financiera.</p>
+                  </a>
+                </div>
+              </div>
+            </li>                                            
           <li class="nav-item">
             <a class="nav-link" routerLink="/sobre-nosotros" routerLinkActive="active">Sobre nosotros</a>
           </li>

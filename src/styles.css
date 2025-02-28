@@ -1,9 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-.logo {
-    width: 100px; /* Ajusta el tamaño según lo necesites */
-    height: 100px;
-  }
-
   .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -27,6 +22,48 @@
   .whatsapp-float:hover {
     transform: scale(1.1);
   }
+
+  /* footer */
+  html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  body {
+    padding-top: 120px; /* Asegura que el contenido no quede debajo del header */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  app-root {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .container {
+    flex-grow: 1; /* Para que el contenido empuje el footer hacia abajo */
+  }
+  
+  .footer {
+    padding: 0;  /* 🔹 Elimina el espacio interno */
+    height: auto;  /* 🔹 Permite que solo ocupe lo necesario */
+    min-height: unset;  /* 🔹 Evita restricciones de altura mínima */
+  }
+  
+  .footer * {
+    margin: 0;  /* 🔹 Evita márgenes internos innecesarios */
+    padding: 0;  /* 🔹 Ajusta el espaciado interno de los elementos */
+    line-height: 1; /* 🔹 Reduce el espacio entre líneas de texto */
+  }
+  
+  .footer p {
+    font-size: 14px;  /* 🔹 Asegura que el texto no agrande la caja */
+  }
+  
 
   
 

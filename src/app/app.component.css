@@ -1,46 +1,63 @@
+/* === RESET GENERAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 120px;
+  font-family: Arial, sans-serif;
+}
+
 /* === ESTILOS DEL HEADER === */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
   background-color: white;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1020;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 🔹 Top Bar */
 .top-bar {
   background-color: #FFC107;
-  padding: 10px 0;
+  padding: 5px 20px;
   font-size: 14px;
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .contact-info {
   display: flex;
-  gap: 50px; /* Espacio entre el teléfono y el correo */
+  gap: 50px;
   align-items: center;
+}
+
+.contact-info span {
+  font-weight: bold;
 }
 
 .social-btn {
   display: inline-block;
-  margin-left: 10px; /* Espaciado entre los botones */
+  margin-left: 10px;
 }
 
 .social-btn img {
-  width: 30px; /* Tamaño del ícono */
+  width: 30px;
   height: 30px;
   transition: transform 0.3s ease;
 }
 
 .social-btn img:hover {
-  transform: scale(1.1); /* Efecto al pasar el mouse */
-}
-
-.contact-info span {
-  margin-right: 15px;
-  font-weight: bold;
+  transform: scale(1.1);
 }
 
 /* 🔹 Botón Contáctanos */
@@ -52,37 +69,42 @@
 
 /* 🔹 Navbar */
 .navbar {
-  background-color: white;
-  padding: 15px 0;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 1000;
-}
-
-.navbar-brand {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: white;
+  max-height: 90px;
+}
+
+.logo {
+  max-height: 150px;
+  width: auto;
+  display: block;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 15px;
 }
 
 .navbar-nav .nav-link {
-  color: black !important;
   font-weight: bold;
   padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #FFC107;
 }
 
 .navbar-nav .nav-link.active {
-  color: #FFC107 !important;
+  color: #FFC107;
   border-bottom: 2px solid #FFC107;
 }
 
-/* 🔹 Ajuste de espaciado para que el body no se superponga con el header */
-body {
-  padding-top: 120px;
-}
-
-/* === MENÚ DESPLEGABLE ANIMADO === */
-
-/* 🔹 Contenedor del menú desplegable */
+/* === MENÚ DESPLEGABLE FLOTANTE === */
 .custom-dropdown {
   position: relative;
   display: inline-block;
@@ -95,8 +117,8 @@ body {
   top: 100%;
   left: -30px;
   width: calc(100% + 60px);
-  height: 62px;
-  background: green;
+  height: 48px;
+  background: transparent;
 }
 
 /* 🔹 Ocultar el menú por defecto */
@@ -104,13 +126,13 @@ body {
   display: none;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 /* 🔹 Mostrar menú al hacer hover */
 .custom-dropdown:hover .dropdown-menu-container,
 .dropdown-menu-container:hover {
-  display: block;
+  display: flex;
   opacity: 1;
   visibility: visible;
 }
@@ -120,13 +142,12 @@ body {
   display: none !important;
 }
 
-/* 🔹 Contenedor del dropdown grande */
+/* 🔹 Contenedor del dropdown */
 .dropdown-menu-container {
   position: absolute;
-  top: calc(100% + 62px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 95vw;
+  top: calc(100% + 22px);
+  left: 0;
+  width: 100vw; /* 🔹 Ahora se ajusta al ancho completo */
   max-width: 1200px;
   background: white;
   border-top: 3px solid #f1c40f;
@@ -134,18 +155,20 @@ body {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center; /* 🔹 Centrado del contenido */
   align-items: flex-start;
-  min-height: 150px;
-  margin-bottom: 10px;
+  min-height: 100px;
+  margin-bottom: 100px;
   pointer-events: auto;
+  left: 50%;
+  transform: translateX(-37%); /* 🔹 Centrado total */
 }
 
-/* 🔹 Contenedor interno con opciones */
+/* 🔹 Contenedor de opciones */
 .dropdown-menu-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center; /* 🔹 Centra las opciones dentro del menú */
   gap: 20px;
   width: 100%;
   padding: 10px 20px;
@@ -167,7 +190,22 @@ body {
   word-wrap: break-word;
 }
 
-/* 🔹 Ajuste de columnas para pantallas más pequeñas */
+.dropdown-item h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.dropdown-item p {
+  font-size: 14px;
+  color: #666;
+}
+
+.dropdown-item:hover {
+  transform: scale(1.05);
+  background-color: #f1f1f1;
+}
+
+/* 🔹 Responsividad del dropdown */
 @media (max-width: 1024px) {
   .dropdown-item {
     flex: 1 1 calc(50% - 20px);
@@ -177,5 +215,37 @@ body {
 @media (max-width: 768px), (max-width: 480px) {
   .dropdown-item {
     flex: 1 1 100%;
+  }
+
+  .dropdown-menu-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* 🔹 Ajustes del navbar en móvil */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 5px 10px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-item {
+    text-align: center;
+  }
+
+  .custom-dropdown {
+    width: 100%;
+  }
+
+  .custom-dropdown .dropdown-menu-container {
+    position: relative;
+    width: 100%;
+    left: 0;
+    transform: none;
   }
 }

@@ -1,251 +1,252 @@
-/* === RESET GENERAL === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  padding-top: 120px;
-  font-family: Arial, sans-serif;
-}
-
-/* === ESTILOS DEL HEADER === */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1020;
-  display: flex;
-  flex-direction: column;
-}
-
-/* 🔹 Top Bar */
-.top-bar {
-  background-color: #FFC107;
-  padding: 5px 20px;
-  font-size: 14px;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.contact-info {
-  display: flex;
-  gap: 50px;
-  align-items: center;
-}
-
-.contact-info span {
-  font-weight: bold;
-}
-
-.social-btn {
-  display: inline-block;
-  margin-left: 10px;
-}
-
-.social-btn img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
-}
-
-.social-btn img:hover {
-  transform: scale(1.1);
-}
-
-/* 🔹 Botón Contáctanos */
-.btn-contacto {
-  font-weight: bold;
-  padding: 8px 15px;
-  font-size: 14px;
-}
-
-/* 🔹 Navbar */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  width: 100%;
-  background-color: white;
-  max-height: 90px;
-}
-
-.logo {
-  max-height: 150px;
-  width: auto;
-  display: block;
-}
-
-.navbar-nav {
-  display: flex;
-  gap: 15px;
-}
-
-.navbar-nav .nav-link {
-  font-weight: bold;
-  padding: 10px 15px;
-  transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #FFC107;
-}
-
-.navbar-nav .nav-link.active {
-  color: #FFC107;
-  border-bottom: 2px solid #FFC107;
-}
-
-/* === MENÚ DESPLEGABLE FLOTANTE === */
-.custom-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* 🔹 Hover expandido para detectar el mouse */
-.custom-dropdown:hover::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: -30px;
-  width: calc(100% + 60px);
-  height: 48px;
-  background: transparent;
-}
-
-/* 🔹 Ocultar el menú por defecto */
-.custom-dropdown .dropdown-menu-container {
-  display: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-}
-
-/* 🔹 Mostrar menú al hacer hover */
-.custom-dropdown:hover .dropdown-menu-container,
-.dropdown-menu-container:hover {
-  display: flex;
-  opacity: 1;
-  visibility: visible;
-}
-
-/* 🔹 Forzar el cierre cuando se hace clic en una opción */
-.custom-dropdown.menu-hide .dropdown-menu-container {
-  display: none !important;
-}
-
-/* 🔹 Contenedor del dropdown */
-.dropdown-menu-container {
-  position: absolute;
-  top: calc(100% + 22px);
-  left: 0;
-  width: 100vw; /* 🔹 Ahora se ajusta al ancho completo */
-  max-width: 1200px;
-  background: white;
-  border-top: 3px solid #f1c40f;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* 🔹 Centrado del contenido */
-  align-items: flex-start;
-  min-height: 100px;
-  margin-bottom: 100px;
-  pointer-events: auto;
-  left: 50%;
-  transform: translateX(-37%); /* 🔹 Centrado total */
-}
-
-/* 🔹 Contenedor de opciones */
-.dropdown-menu-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* 🔹 Centra las opciones dentro del menú */
-  gap: 20px;
-  width: 100%;
-  padding: 10px 20px;
-  box-sizing: border-box;
-}
-
-/* 🔹 Cada opción en el menú */
-.dropdown-item {
-  flex: 1 1 calc(33.33% - 20px);
-  max-width: 350px;
-  min-width: 250px;
-  min-height: 100px;
-  padding: 15px;
-  text-align: center;
-  background: #f8f9fa;
-  border-radius: 8px;
-  transition: transform 0.3s ease, background 0.3s ease;
-  white-space: normal;
-  word-wrap: break-word;
-}
-
-.dropdown-item h4 {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.dropdown-item p {
-  font-size: 14px;
-  color: #666;
-}
-
-.dropdown-item:hover {
-  transform: scale(1.05);
-  background-color: #f1f1f1;
-}
-
-/* 🔹 Responsividad del dropdown */
-@media (max-width: 1024px) {
-  .dropdown-item {
-    flex: 1 1 calc(50% - 20px);
-  }
-}
-
-@media (max-width: 768px), (max-width: 480px) {
-  .dropdown-item {
-    flex: 1 1 100%;
+  /* === RESET GENERAL === */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
-  .dropdown-menu-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* 🔹 Ajustes del navbar en móvil */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 5px 10px;
+  body {
+    font-family: Arial, sans-serif;
+    padding-top: 90px; /* Ajusta el padding-top para que el contenido no quede oculto */
   }
 
-  .navbar-nav {
-    flex-direction: column;
+  /* === ESTILOS DEL HEADER === */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1020;
+    display: flex;
+    flex-direction: column;
   }
 
-  .navbar-nav .nav-item {
+  /* 🔹 Top Bar */
+  .top-bar {
+    background-color: #FFC107;
+    padding: 5px 20px;
+    font-size: 14px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
     text-align: center;
   }
 
-  .custom-dropdown {
+  .contact-info span {
+    font-weight: bold;
+  }
+
+  .social-btn img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+  }
+
+  .social-btn img:hover {
+    transform: scale(1.1);
+  }
+
+  /* 🔹 Botón Contáctanos */
+  .btn-contacto {
+    font-weight: bold;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  /* 🔹 Navbar */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
     width: 100%;
+    background-color: white;
+    max-height: 80px;
+  }
+
+  .logo {
+    height: 140px;
+    width: auto;
+  }
+
+  .navbar-nav {
+    display: flex;
+    gap: 15px;
+  }
+
+  .navbar-nav .nav-link {
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #FFC107;
+  }
+
+  .navbar-nav .nav-link.active {
+    color: #FFC107;
+    border-bottom: 2px solid #FFC107;
+  }
+
+  /* === MENÚ DESPLEGABLE FLOTANTE === */
+  .custom-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .custom-dropdown:hover::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -30px;
+    width: calc(100% + 60px);
+    height: 48px;
+    background: transparent;
   }
 
   .custom-dropdown .dropdown-menu-container {
-    position: relative;
-    width: 100%;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: calc(100% + 18px);
     left: 0;
-    transform: none;
+    transform: translateX(-36%); /* 🔹 Centrado total */
+    width: 90vw;
+    max-width: 1200px;
+    background: white;
+    border-top: 3px solid #f1c40f;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100px;
   }
-}
+
+  .custom-dropdown:hover .dropdown-menu-container,
+  .dropdown-menu-container:hover {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dropdown-menu-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  .dropdown-item {
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: 350px;
+    min-width: 250px;
+    min-height: 100px;
+    padding: 15px;
+    text-align: center;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .dropdown-item:hover {
+    transform: scale(1.05);
+    background-color: #f1f1f1;
+  }
+
+  /* === FOOTER === */
+  .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    
+    .top-bar {
+      flex-direction: column;
+      padding: 3px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .contact-info {
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      width: 100%;
+      background-color: white;
+      max-height: auto;
+    }
+
+    .logo {
+      height: 80px;
+      width: auto;
+    }
+
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-collapse {
+      background: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .navbar-nav {
+      flex-direction: column;
+    }
+
+    .custom-dropdown .dropdown-menu-container{
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%); /* 🔹 Centrado total */
+      position: relative;
+      width: 100%;
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .dropdown-item {
+      flex: 1 1 100%;
+      text-align: left;
+      padding: 10px;
+    }
+
+    .footer {
+      padding: 5px;
+      font-size: 12px;
+    }
+  }

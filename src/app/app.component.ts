@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { filter } from 'rxjs/operators';
 
+declare var bootstrap: any;
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -35,10 +37,14 @@ export class AppComponent{
     this.isMenuOpen = true;
     this.cdRef.detectChanges();
   }
-  
+
   cerrarMenu() {
     this.isMenuOpen = false;
-    this.cdRef.detectChanges();
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse) {
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+      bsCollapse.hide(); // 🔹 Cierra el menú principal
+    }
   }
 
   @HostListener('document:click', ['$event'])

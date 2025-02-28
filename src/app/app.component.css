@@ -191,6 +191,20 @@
 
   /* === RESPONSIVE === */
   @media (max-width: 768px) {
+
+    .navbar-collapse {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100vw; /* Ocupa todo el ancho de la pantalla */
+      background: white;
+      z-index: 1050;
+      padding: 15px 0;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      
+    }
     
     .top-bar {
       flex-direction: column;
@@ -230,24 +244,48 @@
     }
 
     .navbar-nav {
+      width: 100%;
+      display: flex;
       flex-direction: column;
+      text-align: center;
+      gap: 10px;
     }
 
+    .navbar-nav .nav-link {
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      width: 100%;
+      background: #f8f9fa;
+      transition: background 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      background: #e0e0e0;
+    }
+
+    /* 🔹 Para que el menú desplegable en móviles se vea correctamente */
     .custom-dropdown .dropdown-menu-container {
       position: absolute;
       top: 100%;
       left: 50%;
       transform: translateX(-50%);
       width: 100vw;
-      max-height: 300px; /* Establece una altura máxima */
-      overflow-y: auto;  /* Activa el desplazamiento si es necesario */
+      max-height: 300px;  /* 🔹 Ajusta según necesidad */
+      overflow-y: auto;   /* 🔹 Activa el desplazamiento */
+      padding: 10px;
+      background: white;
+      z-index: 1050;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     }
 
+    /* 🔹 Asegura que los elementos dentro se adapten bien */
     .dropdown-item {
       flex: 1 1 100%;
-      text-align: center;
-      padding: 10px;
       width: 100%;
+      padding: 12px;
+      text-align: center;
+      background: #f8f9fa;
     }
 
     .footer {

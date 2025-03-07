@@ -13,6 +13,7 @@ import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-contact-form',
+  standalone: true,
   imports: [CommonModule, ReactiveFormsModule, ToastModule, ButtonModule, InputTextModule, InputTextarea, CardModule],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.css'

@@ -29,7 +29,7 @@ export class ContactFormComponent {
     this.contactForm = this.fb.group({
       nombre: ['', Validators.required],
       correoElectronico: ['', [Validators.required, Validators.email]],
-      telefono: ['', Validators.required],
+      telefono: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
       asunto: ['', Validators.required],
       mensaje: ['']
     });

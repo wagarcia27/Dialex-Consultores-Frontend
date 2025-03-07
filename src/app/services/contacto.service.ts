@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ContactoService {
-  private apiUrl = 'http://localhost:8080/api/contactos'; // Cambia esto por la URL real de tu API
+  private apiUrl = 'https://dialex-consultores-backend.onrender.com/api/contactos'; // Cambia esto por la URL real de tu API
 
   constructor(private http: HttpClient) {}
 

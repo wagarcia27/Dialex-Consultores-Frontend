@@ -1,4 +1,5 @@
-<p-toast></p-toast> <!-- Contenedor de mensajes PrimeNG -->
+<p-toast></p-toast>
+<!-- Contenedor de mensajes PrimeNG -->
 
 <div class="contact-form-container">
   <div class="form-header">
@@ -6,7 +7,9 @@
       ¿Listo para <span class="highlight">Comenzar?</span>
       <span class="checkmark">✓</span>
     </h2>
-    <p class="subtitle">Desata el potencial de tu negocio con nuestra experiencia experta.</p>
+    <p class="subtitle">
+      Desata el potencial de tu negocio con nuestra experiencia experta.
+    </p>
   </div>
 
   <p-card class="contact-card">
@@ -14,6 +17,15 @@
       <div class="p-field">
         <label for="nombre">Tu nombre</label>
         <input id="nombre" type="text" formControlName="nombre" pInputText />
+        <small
+          *ngIf="
+            contactForm.get('nombre')?.invalid &&
+            contactForm.get('nombre')?.touched
+          "
+          class="p-error"
+        >
+          Nombre es obligatorio
+        </small>
       </div>
 
       <div class="p-field">
@@ -24,25 +36,72 @@
           formControlName="correoElectronico"
           pInputText
         />
+        <small
+          *ngIf="
+            contactForm.get('correoElectronico')?.invalid &&
+            contactForm.get('correoElectronico')?.touched
+          "
+          class="p-error"
+        >
+          Correo electrónico inválido o vacío
+        </small>
       </div>
 
       <div class="p-field">
         <label for="telefono">Teléfono</label>
         <input id="telefono" type="tel" formControlName="telefono" pInputText />
+        <small
+          *ngIf="
+            contactForm.get('telefono')?.hasError('required') &&
+            contactForm.get('telefono')?.touched
+          "
+          class="p-error"
+        >
+          Teléfono es obligatorio
+        </small>
+
+        <small
+          *ngIf="
+            contactForm.get('telefono')?.hasError('pattern') &&
+            !contactForm.get('telefono')?.hasError('required') &&
+            contactForm.get('telefono')?.touched
+          "
+          class="p-error"
+        >
+          Solo se permiten números en el teléfono
+        </small>
       </div>
 
       <div class="p-field">
         <label for="asunto">Asunto</label>
         <input id="asunto" type="text" formControlName="asunto" pInputText />
+        <small
+          *ngIf="
+            contactForm.get('asunto')?.invalid &&
+            contactForm.get('asunto')?.touched
+          "
+          class="p-error"
+        >
+          Asunto es obligatorio
+        </small>
       </div>
 
       <div class="p-field">
         <label for="mensaje">Tu mensaje (opcional)</label>
-        <textarea id="mensaje" formControlName="mensaje" pInputTextarea rows="4"></textarea>
+        <textarea
+          id="mensaje"
+          formControlName="mensaje"
+          pInputTextarea
+          rows="4"
+        ></textarea>
       </div>
 
-      <button pButton type="submit" label="Enviar" class="submit-button"></button>
-
+      <button
+        pButton
+        type="submit"
+        label="Enviar"
+        class="submit-button"
+      ></button>
     </form>
   </p-card>
 </div>

@@ -3,13 +3,15 @@ import { NavigationEnd, RouterOutlet, Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { filter } from 'rxjs/operators';
+import { ContactFormComponent } from './contacto/contact-form/contact-form.component';
+
 
 declare var bootstrap: any;
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, CommonModule],
+  imports: [RouterOutlet, RouterModule, CommonModule, ContactFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -7,7 +7,7 @@
 
   body {
     font-family: Arial, sans-serif;
-    padding-top: 90px; /* Ajusta el padding-top para que el contenido no quede oculto */
+    padding-top: 100px; /* Ajusta el padding-top para que el contenido no quede oculto */
   }
 
   /* === ESTILOS DEL HEADER === */
@@ -25,7 +25,7 @@
 
   /* 🔹 Top Bar */
   .top-bar {
-    background-color: #FFC107;
+    background-color: #99e0b1;
     padding: 5px 20px;
     font-size: 14px;
     color: black;
@@ -187,6 +187,26 @@
     text-align: center;
     padding: 10px;
     font-size: 14px;
+  }
+
+  .container {
+    flex-grow: 1; /* Para que el contenido empuje el footer hacia abajo */
+  }
+  
+  .footer {
+    padding: 0;  /* 🔹 Elimina el espacio interno */
+    height: auto;  /* 🔹 Permite que solo ocupe lo necesario */
+    min-height: unset;  /* 🔹 Evita restricciones de altura mínima */
+  }
+  
+  .footer * {
+    margin: 0;  /* 🔹 Evita márgenes internos innecesarios */
+    padding: 0;  /* 🔹 Ajusta el espaciado interno de los elementos */
+    line-height: 1; /* 🔹 Reduce el espacio entre líneas de texto */
+  }
+  
+  .footer p {
+    font-size: 14px;  /* 🔹 Asegura que el texto no agrande la caja */
   }
 
   /* === RESPONSIVE === */

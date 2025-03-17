@@ -1,0 +1,152 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 400px;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100vw;
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.corporate-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.corporate-image:hover {
+  transform: scale(1.05);
+}
+
+.text-container {
+  flex: 1;
+  padding: 1rem;
+}
+
+.highlight-text {
+  color: #e63946;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.main-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 1.6;
+  color: #555;
+}
+
+.learn-more-button {
+  margin-top: 1.5rem;
+  background-color: #e63946;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-button:hover {
+  background-color: #d62828;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: justify;
+  color: white;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 600px;
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
+
+
+@media (max-width: 768px) {
+  .hero-text {
+    padding: 0 10px;
+    font-size: 1rem;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .text-container {
+    text-align: center;
+  }
+
+  /* Ocultar imagen en móviles */
+  .image-container {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    padding: 0 5px;
+    font-size: 0.9rem;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .text-container {
+    text-align: center;
+  }
+
+    /* Ocultar imagen en móviles */
+  .image-container {
+    display: none;
+  }
+}
+

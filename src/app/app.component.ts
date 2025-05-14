@@ -59,16 +59,8 @@ export class AppComponent {
   }
 
   toggleMenu(event: Event) {
-    event.stopPropagation();
-    if (this.isMobile) {
-      this.isMenuOpen = !this.isMenuOpen;
-      if (this.isMenuOpen) {
-        this.renderer.addClass(document.body, 'menu-open');
-      } else {
-        this.renderer.removeClass(document.body, 'menu-open');
-      }
-      this.cdRef.detectChanges();
-    }
+    event.preventDefault();
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
   cerrarMenu() {
@@ -77,10 +69,33 @@ export class AppComponent {
   }
 
   seleccionarOpcion() {
-    if (this.isMobile) {
+    this.isMenuOpen = false;
+    this.isNavbarCollapsed = true;
+  }
+
+  scrollToContact(event: Event) {
+    event.preventDefault();
+    const contactForm = document.getElementById('contacto');
+    if (contactForm) {
+      // Offset más grande para móvil para que se detenga más arriba
+      const headerOffset = this.isMobile ? 60 : 20;
+      const elementPosition = contactForm.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    // Cerrar el menú móvil si está abierto
+    this.isNavbarCollapsed = true;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const dropdown = document.querySelector('.dropdown');
+    if (dropdown && !dropdown.contains(event.target as Node)) {
       this.isMenuOpen = false;
-      this.isNavbarCollapsed = true;
-      this.renderer.removeClass(document.body, 'menu-open');
     }
   }
 }

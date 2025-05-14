@@ -2,17 +2,13 @@
   <!-- 🔹 Top Bar -->
   <div class="top-bar">
     <div class="container">
-      <!-- Primera fila: info de contacto -->
       <div class="top-row">
         <div class="contact-info">
           <span><i class="fas fa-phone-alt"></i> (+57) 300 498 6292</span>
           <span><i class="fas fa-envelope"></i> infos&#64;dialexconsultores.com</span>
         </div>
-      </div>
-      <!-- Segunda fila: botón y redes sociales -->
-      <div class="top-row">
         <div class="social-container">
-          <a href="#contacto" class="btn btn-contacto">Contáctanos</a>
+          <a href="#contacto" class="btn-contacto" (click)="scrollToContact($event)">Contáctanos</a>
           <div class="social-icons">
             <a href="https://www.facebook.com/profile.php?id=1029099303" target="_blank" class="social-btn">
               <img src="assets/facebook-icon.png" alt="Facebook">
@@ -83,7 +79,7 @@
             <a class="nav-link" routerLink="/sobre-nosotros" routerLinkActive="active">Sobre nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/contacto" routerLinkActive="active">Contacto</a>
+            <a class="nav-link" href="#contacto" (click)="scrollToContact($event)">Contacto</a>
           </li>
         </ul>
       </div>
@@ -95,8 +91,8 @@
   <router-outlet></router-outlet>
 </main>
 
-<div class="contact-form-wrapper">
-  <app-contact-form id="contacto"></app-contact-form>
+<div id="contacto" class="contact-form-wrapper">
+  <app-contact-form></app-contact-form>
 </div>
 
 <footer class="footer text-center">

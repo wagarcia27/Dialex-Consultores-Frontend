@@ -1,77 +1,84 @@
 <header class="header">
   <!-- 🔹 Top Bar -->
   <div class="top-bar">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="contact-info">
-        <span><i class="fas fa-phone-alt"></i> (+57) 300 498 6292</span>
-        <span><i class="fas fa-envelope"></i> infos&#64;dialexconsultores.com</span>
+    <div class="container">
+      <!-- Primera fila: info de contacto -->
+      <div class="top-row">
+        <div class="contact-info">
+          <span><i class="fas fa-phone-alt"></i> (+57) 300 498 6292</span>
+          <span><i class="fas fa-envelope"></i> infos&#64;dialexconsultores.com</span>
+        </div>
       </div>
-      <div class="d-flex align-items-center">
-        <button class="btn btn-danger btn-contacto">Contáctanos</button>
-        <a href="https://www.facebook.com/profile.php?id=1029099303" target="_blank" class="social-btn">
-          <img src="assets/facebook-icon.png" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com/williamgarcia27/" target="_blank" class="social-btn">
-          <img src="assets/instagram-icon.png" alt="Instagram">
-        </a>
-        <a href="https://wa.me/573004986292" target="_blank" class="social-btn">
-          <img src="assets/call-icon.png" alt="Llamar">
-        </a>
+      <!-- Segunda fila: botón y redes sociales -->
+      <div class="top-row">
+        <div class="social-container">
+          <a href="#contacto" class="btn btn-contacto">Contáctanos</a>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=1029099303" target="_blank" class="social-btn">
+              <img src="assets/facebook-icon.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/williamgarcia27/" target="_blank" class="social-btn">
+              <img src="assets/instagram-icon.png" alt="Instagram">
+            </a>
+            <a href="https://wa.me/573004986292" target="_blank" class="social-btn">
+              <img src="assets/call-icon.png" alt="Llamar">
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- 🔹 Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
       <!-- Logo -->
-      <a class="navbar-brand" routerLink="/" routerLinkActive="active">
+      <a class="navbar-brand" routerLink="/">
         <img src="assets/logo.png" alt="Logo" class="logo">
       </a>
 
       <!-- Botón para móvil -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <!-- Menú de navegación -->
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <div class="collapse navbar-collapse" [ngClass]="{'show': !isNavbarCollapsed}" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/" routerLinkActive="active">Inicio</a>
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
           </li>
-          <li class="nav-item dropdown custom-dropdown" (mouseenter)="abrirMenu()" 
-              (mouseleave)="cerrarMenu()" [ngClass]="{ 'menu-open': isMenuOpen }">
-            <span class="nav-link dropdown-toggle" (click)="toggleMenu()">Servicios</span>
-            <div class="dropdown-menu-container" [hidden]="!isMenuOpen">
+          <li class="nav-item dropdown" [class.menu-open]="isMenuOpen" (click)="$event.stopPropagation()">
+            <span class="nav-link dropdown-toggle" (click)="toggleMenu($event)">Servicios</span>
+            <div class="dropdown-menu-container" [class.show]="isMenuOpen">
               <div class="dropdown-menu-content">
-                <a routerLink="/contabilidad" class="dropdown-item" (click)="cerrarMenu()">
+                <a routerLink="/contabilidad" class="dropdown-item" (click)="seleccionarOpcion()">
                   <h4>Contabilidad General</h4>
                   <p>Organizamos información contable con estándares internacionales.</p>
                 </a>
-                <a routerLink="/tributacion" class="dropdown-item" (click)="cerrarMenu()">
+                <a routerLink="/tributacion" class="dropdown-item" (click)="seleccionarOpcion()">
                   <h4>Tributación</h4>
                   <p>Asesoría integral en planificación y cumplimiento tributario.</p>
                 </a>
-                <a routerLink="/costos" class="dropdown-item" (click)="cerrarMenu()">
+                <a routerLink="/costos" class="dropdown-item" (click)="seleccionarOpcion()">
                   <h4>Costos Industriales y Comerciales</h4>
                   <p>Información sobre costos para decisiones económicas.</p>
                 </a>
-                <a routerLink="/revisoria" class="dropdown-item" (click)="cerrarMenu()">
+                <a routerLink="/revisoria" class="dropdown-item" (click)="seleccionarOpcion()">
                   <h4>Revisoría Fiscal</h4>
                   <p>Aseguramos la integridad y cumplimiento normativo.</p>
                 </a>
-                <a routerLink="/auditoria-interna" class="dropdown-item" (click)="cerrarMenu()">
+                <a routerLink="/auditoria-interna" class="dropdown-item" (click)="seleccionarOpcion()">
                   <h4>Auditoría Interna</h4>
                   <p>Optimización de controles internos y procesos administrativos.</p>
                 </a>
-                <a routerLink="/auditoria-externa" class="dropdown-item" (click)="cerrarMenu()">
+                <a routerLink="/auditoria-externa" class="dropdown-item" (click)="seleccionarOpcion()">
                   <h4>Auditoría Externa</h4>
                   <p>Opiniones independientes sobre información financiera.</p>
                 </a>
               </div>
             </div>
-          </li>                                            
+          </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/sobre-nosotros" routerLinkActive="active">Sobre nosotros</a>
           </li>
@@ -84,15 +91,19 @@
   </nav>
 </header>
 
-
-<!-- Espacio para el contenido -->
-<div class="container">  
+<main class="main-content">
   <router-outlet></router-outlet>
+</main>
+
+<div class="contact-form-wrapper">
+  <app-contact-form id="contacto"></app-contact-form>
 </div>
 
-
-<app-contact-form></app-contact-form>
- <!-- Footer fijo en la parte inferior -->
- <footer class="footer bg-dark text-white text-center py-3">
+<footer class="footer text-center">
   <p>&copy; 2025 Dialex Consultores. Todos los derechos reservados.</p>
 </footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/573004986292" target="_blank" class="whatsapp-float">
+  <img src="assets/whatsapp-icon.png" alt="WhatsApp">
+</a>

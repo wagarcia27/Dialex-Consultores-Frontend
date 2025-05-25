@@ -350,7 +350,7 @@ $light-bg: #f8f9fa;
         }
 
         &:hover {
-          background: darken(#ddd, 10%);
+          background: color.adjust(#ddd, $lightness: -10%);
         }
 
         &:focus {

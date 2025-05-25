@@ -48,7 +48,8 @@
                   "maximumError": "20kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/Dialex-Consultores-Frontend/"
             },
             "development": {
               "optimization": false,

@@ -2,7 +2,7 @@
 
 // Variables
 $top-bar-height: 35px;
-$navbar-height: 105px;
+$navbar-height: 120px;
 $primary-color: #dc3545;
 $text-color: #333;
 
@@ -200,19 +200,19 @@ body {
     justify-content: flex-start;
     
     .logo {
-      height: 90px !important;
+      height: 110px !important;
       width: auto !important;
-      max-width: 600px !important;
+      max-width: 700px !important;
       object-fit: contain !important;
       
       @media (max-width: 991.98px) {
-        height: 85px !important;
-        max-width: 550px !important;
+        height: 100px !important;
+        max-width: 650px !important;
       }
       
       @media (max-width: 767.98px) {
-        height: 80px !important;
-        max-width: 90% !important;
+        height: 90px !important;
+        max-width: 95% !important;
       }
     }
   }
@@ -254,54 +254,144 @@ body {
       z-index: 1000;
 
       .navbar-nav {
-        padding: 0;
-        margin: 0;
+        padding: 0 !important;
+        margin: 0 !important;
+        flex-direction: column !important;
         
         .nav-item {
-          border-bottom: 1px solid #eee;
+          // Línea divisoria para TODAS las opciones - más específico que Bootstrap
+          border-bottom: 1px solid #ddd !important;
+          margin: 0 !important;
+          width: 100% !important;
           
+          // Remover borde del último elemento
           &:last-child {
-            border-bottom: none;
+            border-bottom: none !important;
           }
 
+          // Estilos consistentes para nav-link - sobrescribir Bootstrap
           .nav-link {
-            padding: 15px;
-            display: block;
+            padding: 18px 20px !important;
+            display: block !important;
+            border-bottom: none !important;
+            background: white !important;
+            color: $text-color !important;
+            text-decoration: none !important;
+            font-weight: 500 !important;
+            border-radius: 0 !important;
+            margin: 0 !important;
+            width: 100% !important;
+            text-align: left !important;
+            
+            &:hover, &:focus {
+              background-color: #f8f9fa !important;
+              color: $primary-color !important;
+              border-radius: 0 !important;
+            }
           }
 
+          // Estilos específicos para dropdown - sobrescribir Bootstrap
           &.dropdown {
-            border-bottom: none;
+            border-bottom: 1px solid #ddd !important;
+            margin: 0 !important;
+            width: 100% !important;
+            
+            .dropdown-toggle {
+              padding: 18px 20px !important;
+              display: block !important;
+              width: 100% !important;
+              text-align: left !important;
+              border: none !important;
+              background: white !important;
+              cursor: pointer !important;
+              position: relative !important;
+              font-weight: 500 !important;
+              color: $text-color !important;
+              border-radius: 0 !important;
+              margin: 0 !important;
+              
+              &:hover, &:focus {
+                background-color: #f8f9fa !important;
+                color: $primary-color !important;
+                border-radius: 0 !important;
+              }
+              
+              &::after {
+                position: absolute !important;
+                right: 20px !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                transition: transform 0.3s ease !important;
+              }
+            }
+            
+            &.menu-open .dropdown-toggle::after {
+              transform: translateY(-50%) rotate(180deg) !important;
+            }
             
             .dropdown-menu-container {
-              position: static;
-              box-shadow: none;
-              padding: 0;
-              margin: 0;
-              opacity: 1;
-              visibility: visible;
-              display: none;
-              max-height: 42vh;
-              overflow-y: auto;
-              -webkit-overflow-scrolling: touch;
+              position: static !important;
+              box-shadow: none !important;
+              padding: 0 !important;
+              margin: 0 !important;
+              margin-top: 15px !important;
+              padding-top: 10px !important;
+              opacity: 1 !important;
+              visibility: visible !important;
+              display: none !important;
+              max-height: 42vh !important;
+              overflow-y: auto !important;
+              background: #f8f9fa !important;
+              border-top: 1px solid #e0e0e0 !important;
 
               &.show {
-                display: block;
+                display: block !important;
               }
 
-              .dropdown-menu-content {
-                padding: 0;
-                background: #f8f9fa;
-                
-                .dropdown-item {
-                  padding: 20px;
-                  border-bottom: 1px solid #eee;
-                  background: white;
+                              .dropdown-menu-content {
+                  padding: 0 !important;
+                  background: #f8f9fa !important;
                   
-                  &:last-child {
-                    border-bottom: none;
+                  .dropdown-item {
+                    padding: 16px 25px !important;
+                    margin: 2px 10px !important;
+                    border-bottom: 1px solid #ddd !important;
+                    background: white !important;
+                    display: block !important;
+                    color: $text-color !important;
+                    text-decoration: none !important;
+                    border-radius: 4px !important;
+                    
+                    &:hover {
+                      background-color: #f0f0f0 !important;
+                      transform: translateX(2px) !important;
+                      transition: all 0.2s ease !important;
+                    }
+                    
+                    &:last-child {
+                      border-bottom: none !important;
+                      margin-bottom: 10px !important;
+                    }
+                    
+                    &:first-child {
+                      margin-top: 5px !important;
+                    }
+                    
+                    h4 {
+                      font-size: 1rem !important;
+                      margin-bottom: 5px !important;
+                      color: $primary-color !important;
+                      font-weight: 600 !important;
+                    }
+                    
+                    p {
+                      font-size: 0.85rem !important;
+                      margin: 0 !important;
+                      color: #666 !important;
+                      line-height: 1.4 !important;
+                    }
                   }
                 }
-              }
             }
           }
         }
@@ -309,49 +399,7 @@ body {
     }
   }
 
-  @media (max-width: 768px) {
-    .nav-item.dropdown {
-      .dropdown-toggle {
-        position: relative;
-        display: block;
-        width: 100%;
-        text-align: left;
-        padding: 15px;
-        border-bottom: 1px solid #eee;
-        background: white;
-        cursor: pointer;
-        z-index: 2;
-        
-        &::after {
-          position: absolute;
-          right: 15px;
-          top: 50%;
-          transform: translateY(-50%);
-          transition: transform 0.3s ease;
-        }
-      }
-
-      &.menu-open {
-        .dropdown-toggle {
-          border-bottom: 1px solid #eee;
-          
-          &::after {
-            transform: translateY(-50%) rotate(180deg);
-          }
-        }
-
-        .dropdown-menu-container {
-          border-bottom: 1px solid #eee;
-        }
-      }
-
-      .dropdown-menu-container {
-        background: #f8f9fa;
-        position: relative;
-        z-index: 1;
-      }
-    }
-  }
+  // Reglas duplicadas eliminadas - ya están definidas arriba
 
   // Prevenir scroll del body cuando el menú está abierto
   body.menu-open {
@@ -364,18 +412,7 @@ body {
     gap: 1rem;
     width: 100%;
     justify-content: center;
-
-    @media (max-width: 768px) {
-      padding: 0;
-      
-      .nav-item {
-        border-bottom: 1px solid #eee;
-        
-        &:last-child {
-          border-bottom: none;
-        }
-      }
-    }
+    // Estilos móviles ya definidos en .navbar-collapse
   }
 
   .nav-item {
@@ -416,63 +453,7 @@ body {
     }
   }
 
-  .dropdown-menu-container {
-    @media (max-width: 768px) {
-      position: static;
-      box-shadow: none;
-      padding: 0;
-      margin: 0;
-      background: #f8f9fa;
-    }
-  }
-
-  .dropdown-menu-content {
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      padding: 0;
-      gap: 1px;
-      background: white;
-    }
-  }
-
-  .dropdown-item {
-    @media (max-width: 768px) {
-      padding: 15px;
-      margin: 0;
-      border-radius: 0;
-      background: white;
-      border-bottom: 1px solid #eee;
-
-      &:last-child {
-        border-bottom: none;
-      }
-
-      h4 {
-        font-size: 1rem;
-        margin-bottom: 5px;
-      }
-
-      p {
-        font-size: 0.9rem;
-        margin: 0;
-        color: #666;
-      }
-    }
-  }
-
-  .nav-item {
-    @media (max-width: 768px) {
-      border-bottom: 1px solid #eee;
-
-      &:last-child {
-        border-bottom: none;
-      }
-
-      .nav-link {
-        padding: 15px;
-      }
-    }
-  }
+  // Reglas duplicadas eliminadas - estilos móviles ya definidos en .navbar-collapse
 }
 
 // Mega Menu
@@ -964,52 +945,68 @@ app-contact-form {
     }
   }
 
-  .nav-item.dropdown {
-    .dropdown-toggle {
-      position: relative;
-      display: block;
-      width: 100%;
-      text-align: left;
-      padding: 15px;
-      border-bottom: 1px solid #eee;
-      background: transparent;
-      cursor: pointer;
-      
-      &::after {
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: transform 0.3s ease;
-      }
-    }
-
-    &.menu-open {
-      .dropdown-toggle {
-        border-bottom: none;
-        
-        &::after {
-          transform: translateY(-50%) rotate(180deg);
+  // Estilos específicos y forzados para el menú móvil
+  .navbar-collapse {
+    .navbar-nav {
+      .nav-item {
+        // Asegurar padding consistente para todos los nav-items
+        .nav-link {
+          padding: 18px 15px !important;
+          border-bottom: 1px solid #eee !important;
         }
-      }
 
-      .dropdown-menu-container {
-        border-bottom: 1px solid #eee;
-      }
-    }
+                 // Estilos específicos para el dropdown
+         &.dropdown {
+            .dropdown-toggle {
+             position: relative !important;
+             display: block !important;
+             width: 100% !important;
+             text-align: left !important;
+             padding: 18px 15px !important;
+             border-bottom: 1px solid #eee !important;
+             background: transparent !important;
+             cursor: pointer !important;
+             
+             &::after {
+               position: absolute !important;
+               right: 15px !important;
+               top: 50% !important;
+               transform: translateY(-50%) !important;
+               transition: transform 0.3s ease !important;
+             }
+           }
 
-    .dropdown-menu-container {
-      background: #f8f9fa;
-      
-      .dropdown-menu-content {
-        padding: 0;
-        
-        .dropdown-item {
-          padding: 15px;
-          border-bottom: 1px solid #eee;
-          
-          &:last-child {
-            border-bottom: none;
+           &.menu-open {
+             .dropdown-toggle {
+               border-bottom: none !important; // Quitar borde cuando está abierto
+               
+               &::after {
+                 transform: translateY(-50%) rotate(180deg) !important;
+               }
+             }
+
+             .dropdown-menu-container {
+               border-bottom: 1px solid #eee !important;
+               margin-top: 10px !important; // Más espacio entre servicios y dropdown
+               padding-top: 5px !important;
+             }
+           }
+
+          .dropdown-menu-container {
+            background: #f8f9fa !important;
+            
+            .dropdown-menu-content {
+              padding: 0 !important;
+              
+              .dropdown-item {
+                padding: 18px 20px !important; // Padding consistente
+                border-bottom: 1px solid #eee !important;
+                
+                &:last-child {
+                  border-bottom: none !important;
+                }
+              }
+            }
           }
         }
       }
@@ -1046,17 +1043,72 @@ app-contact-form {
   .navbar {
     .navbar-brand {
       .logo {
-        height: 90px !important;
-        max-width: 600px !important;
+        height: 110px !important;
+        max-width: 700px !important;
         
         @media (max-width: 991.98px) {
-          height: 85px !important;
-          max-width: 550px !important;
+          height: 100px !important;
+          max-width: 650px !important;
         }
         
         @media (max-width: 767.98px) {
-          height: 80px !important;
-          max-width: 90% !important;
+          height: 90px !important;
+          max-width: 95% !important;
+        }
+      }
+    }
+  }
+}
+
+// Reglas específicas para sobrescribir Bootstrap en móvil
+@media (max-width: 768px) {
+  .header .navbar .navbar-collapse.show .navbar-nav {
+    .nav-item {
+      border-bottom: 1px solid #ddd !important;
+      margin: 0 !important;
+      width: 100% !important;
+      
+      &:last-child {
+        border-bottom: none !important;
+      }
+      
+      .nav-link {
+        padding: 18px 20px !important;
+        border-bottom: none !important;
+        background: white !important;
+        color: $text-color !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        text-align: left !important;
+        font-weight: 500 !important;
+        
+        &:hover, &:focus {
+          background-color: #f8f9fa !important;
+          color: $primary-color !important;
+          border-radius: 0 !important;
+        }
+      }
+      
+      &.dropdown {
+        border-bottom: 1px solid #ddd !important;
+        
+        .dropdown-toggle {
+          padding: 18px 20px !important;
+          border: none !important;
+          background: white !important;
+          color: $text-color !important;
+          border-radius: 0 !important;
+          margin: 0 !important;
+          width: 100% !important;
+          text-align: left !important;
+          font-weight: 500 !important;
+          
+          &:hover, &:focus {
+            background-color: #f8f9fa !important;
+            color: $primary-color !important;
+            border-radius: 0 !important;
+          }
         }
       }
     }

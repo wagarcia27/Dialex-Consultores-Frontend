@@ -1,9 +1,24 @@
 @use "sass:color";
-@use '../../../styles/variables' as *;
+
+$primary-color: #dc3545;
+$secondary-color: #3f89d3;
+$text-color: #333;
+$light-bg: #f8f9fa;
 
 .service-page {
   margin-top: -2rem;
   overflow-x: hidden;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    margin-top: 0;
+    padding: 0;
+  }
+
+  // Justificar todos los textos
+  p, .testimonial-text, .description, span {
+    text-align: justify;
+  }
 }
 
 // Hero Section
@@ -14,6 +29,13 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    height: auto;
+    min-height: 300px;
+    padding: 2rem 0;
+  }
 
   .gradient-overlay {
     position: absolute;
@@ -33,23 +55,45 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
 
     h1 {
       font-size: 3.5rem;
       font-weight: 700;
       margin-bottom: 1.5rem;
+      
+      @media (max-width: 767.98px) {
+        font-size: 2rem;
+      }
     }
 
     p {
       font-size: 1.2rem;
       margin-bottom: 2rem;
       opacity: 0.9;
+      
+      @media (max-width: 767.98px) {
+        font-size: 1rem;
+      }
     }
 
     .hero-buttons {
       display: flex;
       gap: 1rem;
       justify-content: center;
+      
+      @media (max-width: 767.98px) {
+        flex-direction: column;
+        width: 100%;
+        
+        .btn {
+          width: 100%;
+        }
+      }
 
       .btn {
         padding: 0.8rem 2rem;
@@ -69,6 +113,17 @@
 .stats-section {
   padding: 4rem 0;
   background-color: white;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .stat-card {
     text-align: center;
@@ -99,10 +154,22 @@
   }
 }
 
-// Service Intro
+
+// Service Intro Section
 .service-intro {
   padding: 5rem 0;
   background-color: white;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .section-title {
     color: $primary-color;
@@ -116,6 +183,7 @@
     line-height: 1.8;
     color: $text-color;
     margin-bottom: 2rem;
+    text-align: justify;
   }
 
   .benefits {
@@ -153,8 +221,13 @@
 
         span {
           color: $text-color;
+          text-align: justify;
         }
       }
+    }
+
+    @media (max-width: 767.98px) {
+      margin: 1rem 0;
     }
   }
 
@@ -163,6 +236,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 2rem;
 
     .image-container {
       background-color: $primary-color;
@@ -199,6 +273,17 @@
 .services-section {
   padding: 4rem 0;
   background-color: $light-bg;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .section-title {
     margin-bottom: 3rem;
@@ -232,11 +317,17 @@
       color: $text-color;
       font-size: 1rem;
       line-height: 1.6;
+      text-align: justify;
     }
 
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 767.98px) {
+      margin-bottom: 1rem;
+      height: auto;
     }
   }
 }
@@ -245,6 +336,17 @@
 .methodology {
   padding: 6rem 0;
   background: white;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .timeline {
     position: relative;
@@ -298,127 +400,179 @@
       .timeline-content {
         background: white;
         border-radius: 10px;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         position: relative;
+        overflow: hidden;
 
         .timeline-icon {
           width: 60px;
           height: 60px;
           background: $primary-color;
           border-radius: 50%;
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: white;
-          font-size: 1.5rem;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+
+          i {
+            color: white;
+            font-size: 1.5rem;
+          }
         }
 
         h3 {
           color: $secondary-color;
-          font-size: 1.3rem;
-          margin-bottom: 0.5rem;
+          margin-bottom: 1rem;
+          font-size: 1.5rem;
         }
 
         p {
           color: $text-color;
-          font-size: 1rem;
           margin: 0;
+          line-height: 1.6;
+          text-align: justify;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .timeline {
+      &::before {
+        left: 50px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding: 0 1rem;
+
+        .timeline-content {
+          text-align: right !important;
+          padding: 2rem !important;
+          padding-left: 100px !important;
+
+          .timeline-icon {
+            left: 20px !important;
+            right: auto !important;
+          }
         }
       }
     }
   }
 }
 
-// Testimonios Section
+// Testimonios Carrusel
 .testimonials {
-  padding: 4rem 0;
-  background-color: $light-bg;
+  padding: 6rem 0;
+  background: $light-bg;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .testimonial-carousel {
+    position: relative;
     max-width: 800px;
     margin: 0 auto;
-    position: relative;
-  }
 
-  .testimonial-slide {
-    display: none;
-    
-    &.active {
-      display: block;
-      animation: fadeIn 0.5s ease-in-out;
-    }
-  }
-
-  .testimonial-content {
-    text-align: center;
-    padding: 2rem;
-
-    .testimonial-image {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 1.5rem;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-
-    .testimonial-text {
-      font-size: 1.2rem;
-      font-style: italic;
-      color: $text-color;
-      margin-bottom: 1.5rem;
-      line-height: 1.8;
-    }
-
-    h4 {
-      color: $secondary-color;
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .testimonial-position,
-    .testimonial-company {
-      color: $text-color;
-      margin: 0;
-      font-size: 1rem;
-    }
-  }
-
-  .testimonial-controls {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 2rem;
-
-    button {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      border: none;
-      background-color: #ddd;
-      padding: 0;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    .testimonial-slide {
+      display: none;
+      text-align: center;
 
       &.active {
-        background-color: $primary-color;
-        transform: scale(1.2);
+        display: block;
+        animation: fadeIn 0.5s ease-out forwards;
       }
 
-      &:hover {
-        background-color: color.adjust($primary-color, $lightness: 20%);
+      .testimonial-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 2rem;
+        overflow: hidden;
+        border: 5px solid white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          background: linear-gradient(45deg, $primary-color, $secondary-color);
+        }
+      }
+
+      .testimonial-text {
+        font-size: 1.2rem;
+        font-style: italic;
+        color: $text-color;
+        margin-bottom: 2rem;
+        text-align: justify;
+      }
+
+      h4 {
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+      }
+
+      .testimonial-position {
+        color: $secondary-color;
+        margin-bottom: 0.25rem;
+      }
+
+      .testimonial-company {
+        color: $text-color;
+        font-size: 0.9rem;
       }
     }
+
+    .testimonial-controls {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+
+      button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: none;
+        background: #ddd;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          background: $primary-color;
+          transform: scale(1.2);
+        }
+
+        &:hover {
+          background: color.adjust(#ddd, $lightness: -10%);
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -434,99 +588,66 @@
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-// Media Queries
-@media (max-width: 991.98px) {
-  .hero-section {
-    height: 400px;
-
-    .hero-content {
-      h1 {
-        font-size: 2.8rem;
-      }
-
-      p {
-        font-size: 1.1rem;
-      }
-    }
-  }
-
-  .methodology {
-    .timeline {
-      &::before {
-        left: 30px;
-      }
-
-      .timeline-item {
-        width: 100%;
-        padding-left: 80px;
-        padding-right: 0;
-
-        &:nth-child(odd),
-        &:nth-child(even) {
-          left: 0;
-
-          .timeline-content {
-            text-align: left;
-            padding: 1.5rem;
-            padding-left: 70px;
-
-            .timeline-icon {
-              left: 0;
-              width: 50px;
-              height: 50px;
-              font-size: 1.2rem;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .service-intro {
-    padding: 3rem 0;
-
-    .service-image {
-      margin-top: 2rem;
-    }
-  }
-}
-
+// Responsive Styles
 @media (max-width: 767.98px) {
   .hero-section {
     height: 350px;
 
     .hero-content {
       h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
 
       p {
         font-size: 1rem;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        gap: 0.5rem;
-
-        .btn {
-          width: 100%;
-        }
       }
     }
   }
 
   .stats-section {
     .stat-card {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .services-section {
+    .service-card {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .testimonials {
+    .testimonial-content {
+      padding: 1.5rem;
+
+      .testimonial-image {
+        width: 80px;
+        height: 80px;
+      }
+
+      .testimonial-text {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .methodology {
+    padding: 3rem 0;
+
+    h2 {
+      font-size: 2rem;
       margin-bottom: 2rem;
+    }
+
+    .timeline-content {
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        text-align: justify;
+      }
     }
   }
 
@@ -537,6 +658,7 @@
 
     .description {
       font-size: 1rem;
+      text-align: justify;
     }
 
     .benefits {
@@ -548,6 +670,10 @@
 
       ul li {
         font-size: 1rem;
+
+        span {
+          text-align: justify;
+        }
       }
     }
 
@@ -564,23 +690,14 @@
       }
     }
   }
+}
 
-  .services-section {
-    .service-card {
-      margin-bottom: 1.5rem;
-    }
-  }
+@media (max-width: 991.98px) {
+  .service-intro {
+    padding: 3rem 0;
 
-  .testimonials {
-    .testimonial-content {
-      .testimonial-image {
-        width: 100px;
-        height: 100px;
-      }
-
-      .testimonial-text {
-        font-size: 1.1rem;
-      }
+    .service-image {
+      margin-top: 2rem;
     }
   }
 } 

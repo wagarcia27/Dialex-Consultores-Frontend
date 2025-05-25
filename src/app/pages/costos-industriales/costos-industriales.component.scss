@@ -15,6 +15,11 @@ $light-bg: #f8f9fa;
     margin-top: 0;
     padding: 0;
   }
+
+  // Justificar todos los textos
+  p, .testimonial-text, .description, span {
+    text-align: justify;
+  }
 }
 
 // Hero Section
@@ -59,8 +64,8 @@ $light-bg: #f8f9fa;
 
     h1 {
       font-size: 3.5rem;
-      margin-bottom: 1rem;
       font-weight: 700;
+      margin-bottom: 1.5rem;
       
       @media (max-width: 767.98px) {
         font-size: 2rem;
@@ -90,6 +95,17 @@ $light-bg: #f8f9fa;
           width: 100%;
         }
       }
+
+      .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+        }
+      }
     }
   }
 }
@@ -111,8 +127,142 @@ $light-bg: #f8f9fa;
   }
 
   .stat-card {
-    @media (max-width: 767.98px) {
+    text-align: center;
+    padding: 2rem;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 2.5rem;
+      color: $primary-color;
       margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      color: $secondary-color;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    p {
+      color: $text-color;
+      font-size: 1.1rem;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+// Service Intro Section
+.service-intro {
+  padding: 5rem 0;
+  background-color: white;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
+
+  .section-title {
+    color: $primary-color;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $text-color;
+    margin-bottom: 2rem;
+    text-align: justify;
+  }
+
+  .benefits {
+    background-color: $light-bg;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      color: $secondary-color;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        i {
+          color: $primary-color;
+          font-size: 1.2rem;
+          margin-right: 1rem;
+        }
+
+        span {
+          color: $text-color;
+        }
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      margin: 1rem 0;
+    }
+  }
+
+  .service-image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image-container {
+      background-color: $primary-color;
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      i {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        margin: 0;
+      }
     }
   }
 }
@@ -120,7 +270,7 @@ $light-bg: #f8f9fa;
 // Services Section
 .services-section {
   padding: 4rem 0;
-  background-color: #f8f9fa;
+  background-color: $light-bg;
   width: 100%;
   
   @media (max-width: 767.98px) {
@@ -137,21 +287,17 @@ $light-bg: #f8f9fa;
     margin-bottom: 3rem;
     color: $text-color;
     font-size: 2.5rem;
+    font-weight: 700;
   }
 
   .service-card {
     background: white;
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 10px;
     text-align: center;
     height: 100%;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 
     i {
       font-size: 2.5rem;
@@ -160,15 +306,21 @@ $light-bg: #f8f9fa;
     }
 
     h3 {
+      color: $secondary-color;
       font-size: 1.3rem;
-      color: $text-color;
       margin-bottom: 1rem;
     }
 
     p {
-      font-size: 0.95rem;
-      color: #666;
+      color: $text-color;
+      font-size: 1rem;
       line-height: 1.6;
+      text-align: justify;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     }
 
     @media (max-width: 767.98px) {
@@ -246,7 +398,7 @@ $light-bg: #f8f9fa;
       .timeline-content {
         background: white;
         border-radius: 10px;
-        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         position: relative;
         overflow: hidden;
 
@@ -347,15 +499,12 @@ $light-bg: #f8f9fa;
         overflow: hidden;
         border: 5px solid white;
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        background-color: $primary-color;
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          background: linear-gradient(45deg, $primary-color, $secondary-color);
         }
       }
 
@@ -451,59 +600,6 @@ $light-bg: #f8f9fa;
     }
   }
 
-  .service-intro {
-    padding: 3rem 0;
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .description {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .benefits {
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-
-      h3 {
-        font-size: 1.3rem;
-        margin-bottom: 1.2rem;
-      }
-
-      ul li {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-
-        i {
-          font-size: 1rem;
-        }
-      }
-    }
-
-    .service-image {
-      padding: 1rem;
-      
-      .image-container {
-        width: 260px;
-        height: 260px;
-        border-radius: 20px;
-
-        i {
-          font-size: 4rem;
-          margin-bottom: 1rem;
-        }
-
-        h3 {
-          font-size: 1.6rem;
-        }
-      }
-    }
-  }
-
   .stats-section {
     .stat-card {
       margin-bottom: 1.5rem;
@@ -547,6 +643,51 @@ $light-bg: #f8f9fa;
       p {
         font-size: 0.9rem;
       }
+    }
+  }
+
+  .service-intro {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+
+    .benefits {
+      padding: 1.5rem;
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      ul li {
+        font-size: 1rem;
+      }
+    }
+
+    .service-image .image-container {
+      width: 250px;
+      height: 250px;
+
+      i {
+        font-size: 4rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .service-intro {
+    padding: 3rem 0;
+
+    .service-image {
+      margin-top: 2rem;
     }
   }
 }
@@ -738,7 +879,7 @@ $light-bg: #f8f9fa;
       .timeline-content {
         background: white;
         border-radius: 10px;
-        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         position: relative;
         overflow: hidden;
 
@@ -839,15 +980,12 @@ $light-bg: #f8f9fa;
         overflow: hidden;
         border: 5px solid white;
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        background-color: $primary-color;
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          background: linear-gradient(45deg, $primary-color, $secondary-color);
         }
       }
 

@@ -12,7 +12,7 @@ html, body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-  margin-top: -120px; /* Compensar el padding-top del body */
+  margin-top: -155px; /* Compensar el padding-top del body actualizado */
 }
 
 .hero-section {
@@ -171,7 +171,7 @@ html, body {
   }
 
   .hero-section {
-    height: 70vh;
+    height: 80vh; /* Aumentado para evitar recorte */
   }
 
   .hero-text h2 {
@@ -189,7 +189,7 @@ html, body {
 
 @media (max-width: 768px) {
   .hero-section {
-    height: 60vh;
+    height: 75vh; /* Aumentado para evitar recorte en móvil */
   }
 
   .hero-text {
@@ -234,7 +234,7 @@ html, body {
 
 @media (max-width: 480px) {
   .hero-section {
-    height: 50vh;
+    height: 70vh; /* Aumentado para evitar recorte en pantallas pequeñas */
   }
 
   .hero-text h2 {

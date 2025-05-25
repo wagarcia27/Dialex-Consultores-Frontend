@@ -49,7 +49,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/Dialex-Consultores/"
+              "baseHref": "/Dialex-Consultores-Frontend/"
             },
             "development": {
               "optimization": false,

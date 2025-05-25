@@ -9,6 +9,7 @@ import { CostosIndustrialesComponent } from './pages/costos-industriales/costos-
 import { RevisoriaFiscalComponent } from './pages/revisoria-fiscal/revisoria-fiscal.component';
 import { AuditoriaInternaComponent } from './pages/auditoria-interna/auditoria-interna.component';
 import { AuditoriaExternaComponent } from './pages/auditoria-externa/auditoria-externa.component';
+import { PoliticasPrivacidadComponent } from './pages/politicas-privacidad/politicas-privacidad.component';
 
 export const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -21,5 +22,6 @@ export const routes: Routes = [
   { path: 'revisoria', component: RevisoriaFiscalComponent },
   { path: 'auditoria-interna', component: AuditoriaInternaComponent },
   { path: 'auditoria-externa', component: AuditoriaExternaComponent },
+  { path: 'politicas-privacidad', component: PoliticasPrivacidadComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];

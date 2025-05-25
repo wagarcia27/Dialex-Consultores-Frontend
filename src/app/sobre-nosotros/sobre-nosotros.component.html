@@ -1,2 +1,262 @@
-<h1>Sobre Nosotros</h1>
-<p>Información sobre nuestra empresa...</p>
+<div class="about-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="gradient-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>Sobre Dialex Consultores</h1>
+        <p>Líderes en consultoría contable y financiera con más de una década de experiencia transformando empresas</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">{{ stats.experience.current }}{{ stats.experience.suffix }}</span>
+            <span class="stat-label">Años de Experiencia</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">{{ stats.clients.current }}{{ stats.clients.suffix }}</span>
+            <span class="stat-label">Clientes Satisfechos</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">{{ stats.commitment.current }}{{ stats.commitment.suffix }}</span>
+            <span class="stat-label">Compromiso</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Story Section -->
+  <section class="company-story">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="story-content">
+            <h2 class="section-title">Nuestra Historia</h2>
+            <p class="lead">Dialex Consultores nació en 2009 con la visión de revolucionar la consultoría contable y financiera en la región.</p>
+            <p>Fundada por un equipo de profesionales visionarios, nuestra empresa ha evolucionado desde sus humildes comienzos hasta convertirse en una de las consultoras más respetadas y confiables del sector.</p>
+            <p>Durante más de una década, hemos mantenido nuestro compromiso inquebrantable con la excelencia, la innovación y el servicio personalizado, adaptándonos constantemente a las necesidades cambiantes del mercado y las regulaciones fiscales.</p>
+            <p>Nuestro enfoque integral combina experiencia técnica, tecnología de vanguardia y un profundo entendimiento de los desafíos empresariales modernos.</p>
+            <div class="story-highlights">
+              <div class="highlight-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Fundada en 2009 con visión de futuro</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-trophy"></i>
+                <span>Múltiples reconocimientos por excelencia</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-handshake"></i>
+                <span>Relaciones duraderas basadas en confianza</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Crecimiento sostenido año tras año</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="story-image">
+            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Nuestra Historia" class="img-fluid rounded" (error)="onImageError($event)">
+            <div class="image-overlay">
+              <div class="overlay-content">
+                <h3>15+ Años de Excelencia</h3>
+                <p>Construyendo el futuro financiero de nuestros clientes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission, Vision, Values Section -->
+  <section class="mvv-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Nuestros Pilares Fundamentales</h2>
+        <p class="section-subtitle">Los valores y principios que definen nuestra identidad y guían cada una de nuestras acciones</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="mvv-card mission-card">
+            <div class="card-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3>Misión</h3>
+            <p>Brindar servicios contables y financieros de la más alta calidad, ayudando a nuestros clientes a alcanzar sus objetivos empresariales mediante soluciones innovadoras, precisas y oportunas que generen valor agregado sostenible a sus organizaciones.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="mvv-card vision-card">
+            <div class="card-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3>Visión</h3>
+            <p>Ser la consultora contable líder en la región, reconocida por nuestra excelencia profesional, innovación tecnológica y compromiso inquebrantable con el éxito de nuestros clientes, estableciendo nuevos estándares de calidad en la industria.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="mvv-card values-card">
+            <div class="card-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Valores</h3>
+            <ul class="values-list">
+              <li><i class="fas fa-check"></i> Integridad y transparencia absoluta</li>
+              <li><i class="fas fa-check"></i> Excelencia profesional constante</li>
+              <li><i class="fas fa-check"></i> Compromiso total con el cliente</li>
+              <li><i class="fas fa-check"></i> Innovación y mejora continua</li>
+              <li><i class="fas fa-check"></i> Responsabilidad social empresarial</li>
+              <li><i class="fas fa-check"></i> Trabajo en equipo colaborativo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Nuestro Equipo Directivo</h2>
+        <p class="section-subtitle">Profesionales altamente calificados comprometidos con tu éxito empresarial</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let member of teamMembers">
+          <div class="team-card">
+            <div class="team-image">
+              <img [src]="member.image" [alt]="member.position" class="img-fluid" (error)="onImageError($event)">
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a [href]="member.linkedin" class="social-link" (click)="openExternalLink(member.linkedin || '#')"><i class="fab fa-linkedin"></i></a>
+                  <a [href]="'mailto:' + member.email" class="social-link"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>{{ member.name }}</h4>
+              <p class="team-position">{{ member.position }}</p>
+              <p class="team-description">{{ member.description }}</p>
+              <div class="team-credentials">
+                <span class="credential" *ngFor="let credential of member.credentials">{{ credential }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-us">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="why-content">
+            <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+            <p class="lead">Somos más que una consultora contable, somos su socio estratégico para el crecimiento y la transformación empresarial.</p>
+            <div class="why-features">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Confiabilidad Garantizada</h4>
+                  <p>Procesos certificados ISO 9001:2015 y cumplimiento normativo al 100% con respaldo de seguros profesionales</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Respuesta Oportuna</h4>
+                  <p>Entrega de informes y servicios en los tiempos acordados con sistema de seguimiento en tiempo real</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Atención Personalizada</h4>
+                  <p>Cada cliente recibe un servicio adaptado a sus necesidades específicas con un equipo dedicado</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Enfoque Estratégico</h4>
+                  <p>Asesoría integral que impulsa el crecimiento, optimiza recursos y maximiza la rentabilidad</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="why-image">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Por qué elegirnos" class="img-fluid rounded" (error)="onImageError($event)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="certifications-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Certificaciones y Reconocimientos</h2>
+        <p class="section-subtitle">Avalados por las principales instituciones nacionales e internacionales del sector</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4" *ngFor="let cert of certifications">
+          <div class="certification-card">
+            <div class="cert-icon">
+              <i [class]="cert.icon"></i>
+            </div>
+            <h4>{{ cert.title }}</h4>
+            <p>{{ cert.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="timeline-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Nuestra Trayectoria de Crecimiento</h2>
+        <p class="section-subtitle">Hitos importantes que han marcado nuestro desarrollo y evolución empresarial</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let event of timelineEvents">
+          <div class="timeline-year">{{ event.year }}</div>
+          <div class="timeline-content">
+            <h4>{{ event.title }}</h4>
+            <p>{{ event.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="contact-cta">
+    <div class="container">
+      <div class="cta-content text-center">
+        <h2>¿Listo para Transformar tu Gestión Financiera?</h2>
+        <p>Únete a más de 500 empresas que confían en nosotros para impulsar su crecimiento y optimizar sus procesos financieros</p>
+        <div class="cta-buttons">
+          <a href="/contacto" class="btn btn-primary btn-lg">Contáctanos Ahora</a>
+          <a href="/servicios" class="btn btn-outline-light btn-lg">Conoce Nuestros Servicios</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

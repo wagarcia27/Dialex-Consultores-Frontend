@@ -1,30 +1,338 @@
-<div class="inicio-container">
+<div class="home-page">
   <!-- Hero Section -->
-  <div class="hero-section">
-    <img src="assets/empresa-grupo.png" alt="Grupo Empresarial" class="hero-image">
-    <div class="hero-text">
-      <h2>DIALEX CONSULTORES S.A.S</h2>
-      <p>
-        Es una empresa integrada por consultores empresariales con una experiencia de veinticinco (25) años en el mercado nacional especializados en la asesoría contabilidad general, tributación, contabilidad de costos, revisoría fiscal y auditoría interna.
-      </p>
-    </div>
-  </div>
-
-  <!-- Info Section -->
-  <section class="info-section">
-    <div class="content-wrapper">
-      <div class="image-container">
-        <img src="assets/empresa-grupo.png" alt="Imagen Corporativa" class="corporate-image">
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="gradient-overlay"></div>
+      
+      <!-- Elementos flotantes de insolvencia y reorganización -->
+      <div class="business-elements">
+        <div class="business-icon business-icon-1">
+          <i class="fas fa-balance-scale"></i>
+        </div>
+        <div class="business-icon business-icon-2">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div class="business-icon business-icon-3">
+          <i class="fas fa-building"></i>
+        </div>
+        <div class="business-icon business-icon-4">
+          <i class="fas fa-gavel"></i>
+        </div>
+        <div class="business-icon business-icon-5">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <div class="business-icon business-icon-6">
+          <i class="fas fa-file-contract"></i>
+        </div>
+        <div class="business-icon business-icon-7">
+          <i class="fas fa-chart-pie"></i>
+        </div>
+        <div class="business-icon business-icon-8">
+          <i class="fas fa-coins"></i>
+        </div>
       </div>
-      <div class="text-container">
-        <h3 class="highlight-text">Líderes en Consultoría Empresarial</h3>
-        <h2 class="main-title">Comprometidos con tu Éxito</h2>
-        <p class="description">
-          En Dialex Consultores ofrecemos soluciones integrales en contabilidad, tributación y auditoría, adaptadas a las necesidades específicas de cada cliente. Nuestro equipo de expertos se dedica a optimizar los procesos financieros y administrativos de tu empresa para impulsar su crecimiento y rentabilidad.
+      
+      <div class="floating-elements">
+        <div class="floating-element" style="top: 20%; left: 10%;"></div>
+        <div class="floating-element" style="top: 60%; right: 15%;"></div>
+        <div class="floating-element" style="bottom: 30%; left: 20%;"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <!-- Icono principal de insolvencia -->
+        <div class="hero-main-icon">
+          <div class="main-business-icon">
+            <i class="fas fa-balance-scale"></i>
+            <div class="business-pulse"></div>
+          </div>
+        </div>
+        
+        <h1 class="hero-title">
+          <span class="highlight">DIALEX CONSULTORES</span>
+          <span class="subtitle">Especialistas en Procesos de Insolvencia y Reestructuración Empresarial</span>
+        </h1>
+        <p class="hero-description">
+          Somos una consultora especializada en brindar soluciones integrales para empresas en crisis financiera, 
+          procesos de insolvencia, reorganización empresarial y reestructuración de deudas.
         </p>
-        <button class="learn-more-button" routerLink="/sobre-nosotros">
-          Saber más <i class="pi pi-arrow-right"></i>
-        </button>
+        
+        <!-- Indicadores de especialización -->
+        <div class="specialization-indicators">
+          <div class="indicator-item">
+            <div class="indicator-icon">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <span>Crisis Financiera</span>
+          </div>
+          <div class="indicator-item">
+            <div class="indicator-icon">
+              <i class="fas fa-sync-alt"></i>
+            </div>
+            <span>Reorganización</span>
+          </div>
+          <div class="indicator-item">
+            <div class="indicator-icon">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <span>Procesos Legales</span>
+          </div>
+          <div class="indicator-item">
+            <div class="indicator-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <span>Acuerdos</span>
+          </div>
+        </div>
+        
+        <div class="hero-buttons">
+          <a href="#contacto" class="btn btn-primary" (click)="scrollToContact($event)">
+            <i class="fas fa-handshake"></i>
+            Consulta Gratuita
+          </a>
+          <a href="#servicios" class="btn btn-outline" (click)="scrollToServices($event)">
+            <i class="fas fa-balance-scale"></i>
+            Nuestros Servicios
+          </a>
+        </div>
+        <div class="hero-features">
+          <div class="feature-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>Confidencialidad Total</span>
+          </div>
+          <div class="feature-badge">
+            <i class="fas fa-gavel"></i>
+            <span>Expertos Legales</span>
+          </div>
+          <div class="feature-badge">
+            <i class="fas fa-chart-line"></i>
+            <span>Soluciones Efectivas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nuestros Servicios Especializados</h2>
+        <p class="section-subtitle">
+          Soluciones integrales para empresas en situaciones de crisis financiera y procesos de insolvencia
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" *ngFor="let service of services; let i = index" 
+             [style.animation-delay.s]="i * 0.1">
+          <div class="service-icon">
+            <i [class]="service.icon"></i>
+          </div>
+          <h3 class="service-title">{{ service.title }}</h3>
+          <p class="service-description">{{ service.description }}</p>
+          <a [routerLink]="service.link" class="service-link">
+            Saber más <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview Section -->
+  <section class="about-preview-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="about-content">
+            <h2 class="section-title">¿Por Qué Elegir Dialex Consultores?</h2>
+            <p class="lead">
+              Somos especialistas en procesos de insolvencia con un enfoque integral y personalizado para cada situación empresarial.
+            </p>
+            <div class="features-list">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Equipo Especializado</h4>
+                  <p>Profesionales con formación específica en derecho concursal y reestructuración empresarial</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Respuesta Rápida</h4>
+                  <p>Atención inmediata en situaciones de crisis que requieren soluciones urgentes</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-handshake"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Enfoque Colaborativo</h4>
+                  <p>Trabajamos de la mano con empresarios, acreedores y autoridades para encontrar la mejor solución</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="button-container">
+              <a routerLink="/sobre-nosotros" class="btn btn-primary">
+                Conoce Más Sobre Nosotros
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="Consultoría Empresarial" 
+                 class="img-fluid"
+                 (error)="onImageError($event)">
+            <div class="image-overlay">
+              <div class="overlay-content">
+                <h3>Consultoría Especializada</h3>
+                <p>Soluciones para empresas en crisis</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nuestro Proceso de Trabajo</h2>
+        <p class="section-subtitle">
+          Un enfoque estructurado y profesional para resolver situaciones de insolvencia
+        </p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step" *ngFor="let step of processSteps; let i = index">
+          <div class="step-number">{{ i + 1 }}</div>
+          <div class="step-icon">
+            <i [class]="step.icon"></i>
+          </div>
+          <h3 class="step-title">{{ step.title }}</h3>
+          <p class="step-description">{{ step.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Beneficios de Nuestros Servicios</h2>
+        <p class="section-subtitle">
+          Ventajas competitivas que ofrecemos a nuestros clientes
+        </p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card" *ngFor="let benefit of benefits; let i = index">
+          <div class="benefit-icon">
+            <i [class]="benefit.icon"></i>
+          </div>
+          <h3 class="benefit-title">{{ benefit.title }}</h3>
+          <p class="benefit-description">{{ benefit.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section" *ngIf="testimonials.length > 0">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Casos de Éxito</h2>
+        <p class="section-subtitle">
+          Testimonios de empresas que han superado sus crisis con nuestra ayuda
+        </p>
+      </div>
+      <div class="testimonials-carousel">
+        <div class="testimonial-card" 
+             *ngFor="let testimonial of testimonials; let i = index"
+             [class.active]="i === currentTestimonial">
+          <div class="testimonial-content">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-message">{{ testimonial.message }}</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star" 
+                 *ngFor="let star of getStars(testimonial.rating)"
+                 [class.filled]="star === 1"></i>
+            </div>
+          </div>
+          <div class="testimonial-author">
+            <img [src]="testimonial.avatar" 
+                 [alt]="testimonial.name"
+                 class="author-avatar"
+                 (error)="onImageError($event)">
+            <div class="author-info">
+              <h4 class="author-name">{{ testimonial.name }}</h4>
+              <p class="author-position">{{ testimonial.position }}</p>
+              <p class="author-company">{{ testimonial.company }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls" *ngIf="testimonials.length > 1">
+          <button class="carousel-btn prev" (click)="prevTestimonial()">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="carousel-indicators">
+            <button class="indicator" 
+                    *ngFor="let testimonial of testimonials; let i = index"
+                    [class.active]="i === currentTestimonial"
+                    (click)="goToTestimonial(i)"></button>
+          </div>
+          <button class="carousel-btn next" (click)="nextTestimonial()">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">¿Tu Empresa Enfrenta Dificultades Financieras?</h2>
+        <p class="cta-description">
+          No esperes más. Contáctanos para una consulta inicial gratuita y descubre cómo podemos ayudarte 
+          a superar la crisis y reestructurar tu empresa de manera exitosa.
+        </p>
+        <div class="cta-buttons">
+          <a href="#contacto" class="btn btn-primary btn-lg" (click)="scrollToContact($event)">
+            <i class="fas fa-phone"></i>
+            Consulta Gratuita
+          </a>
+          <a href="#servicios" class="btn btn-outline-light btn-lg" (click)="scrollToServices($event)">
+            <i class="fas fa-info-circle"></i>
+            Ver Todos los Servicios
+          </a>
+        </div>
+        <div class="cta-features">
+          <div class="cta-feature">
+            <i class="fas fa-clock"></i>
+            <span>Respuesta en 24 horas</span>
+          </div>
+          <div class="cta-feature">
+            <i class="fas fa-user-shield"></i>
+            <span>Consulta inicial gratuita</span>
+          </div>
+          <div class="cta-feature">
+            <i class="fas fa-lock"></i>
+            <span>Confidencialidad garantizada</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>

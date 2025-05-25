@@ -119,16 +119,30 @@ export class AuditoriaExternaComponent implements OnInit {
   ];
 
   scrollToForm() {
-    const formElement = document.getElementById('contact-form');
+    const formElement = document.getElementById('contacto');
     if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 100;
+      const elementPosition = formElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   }
 
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   }
 

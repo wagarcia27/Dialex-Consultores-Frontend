@@ -105,19 +105,22 @@ export class ContabilidadGeneralComponent implements OnInit {
       nombre: 'Roberto Méndez',
       cargo: 'Director Financiero',
       empresa: 'Grupo Industrial ABC',
-      comentario: 'El servicio de contabilidad de Dialex ha sido fundamental para mantener nuestras finanzas en orden y tomar decisiones informadas.'
+      comentario: 'El servicio de contabilidad de Dialex ha sido fundamental para mantener nuestras finanzas en orden y tomar decisiones informadas.',
+      imagen: 'https://placehold.co/400x400/dc3545/ffffff?text=RM'
     },
     {
       nombre: 'Laura Torres',
       cargo: 'Gerente General',
       empresa: 'Comercial XYZ',
-      comentario: 'La precisión y puntualidad en los informes financieros nos ha permitido mejorar significativamente nuestra gestión empresarial.'
+      comentario: 'La precisión y puntualidad en los informes financieros nos ha permitido mejorar significativamente nuestra gestión empresarial.',
+      imagen: 'https://placehold.co/400x400/3f89d3/ffffff?text=LT'
     },
     {
       nombre: 'Carlos Ruiz',
       cargo: 'Propietario',
       empresa: 'Distribuidora DEF',
-      comentario: 'Excelente servicio contable, siempre atentos a nuestras necesidades y con un equipo altamente profesional.'
+      comentario: 'Excelente servicio contable, siempre atentos a nuestras necesidades y con un equipo altamente profesional.',
+      imagen: 'https://placehold.co/400x400/dc3545/ffffff?text=CR'
     }
   ];
 

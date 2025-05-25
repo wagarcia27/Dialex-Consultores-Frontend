@@ -115,7 +115,7 @@
              [class.active]="i === currentSlide" @fadeIn>
           <div class="testimonial-content">
             <div class="testimonial-image">
-              <span class="initials">{{getInitials(testimonio.nombre)}}</span>
+              <img [src]="testimonio.imagen" [alt]="testimonio.nombre">
             </div>
             <p class="testimonial-text">"{{testimonio.comentario}}"</p>
             <h4>{{testimonio.nombre}}</h4>

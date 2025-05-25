@@ -9,6 +9,12 @@ $light-bg: #f8f9fa;
 .service-page {
   margin-top: -2rem;
   overflow-x: hidden;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    margin-top: 0;
+    padding: 0;
+  }
 }
 
 // Hero Section
@@ -19,6 +25,13 @@ $light-bg: #f8f9fa;
   display: flex;
   align-items: center;
   overflow: hidden;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    height: auto;
+    min-height: 300px;
+    padding: 2rem 0;
+  }
 
   .gradient-overlay {
     position: absolute;
@@ -38,32 +51,43 @@ $light-bg: #f8f9fa;
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
 
     h1 {
       font-size: 3.5rem;
       margin-bottom: 1rem;
       font-weight: 700;
+      
+      @media (max-width: 767.98px) {
+        font-size: 2rem;
+      }
     }
 
     p {
       font-size: 1.2rem;
       margin-bottom: 2rem;
       opacity: 0.9;
+      
+      @media (max-width: 767.98px) {
+        font-size: 1rem;
+      }
     }
 
     .hero-buttons {
       display: flex;
       gap: 1rem;
       justify-content: center;
-
-      .btn {
-        padding: 0.8rem 2rem;
-        font-size: 1.1rem;
-        border-radius: 50px;
-        transition: all 0.3s ease;
-
-        &:hover {
-          transform: translateY(-2px);
+      
+      @media (max-width: 767.98px) {
+        flex-direction: column;
+        width: 100%;
+        
+        .btn {
+          width: 100%;
         }
       }
     }
@@ -74,36 +98,21 @@ $light-bg: #f8f9fa;
 .stats-section {
   padding: 4rem 0;
   background-color: white;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .stat-card {
-    text-align: center;
-    padding: 2rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
-
-    i {
-      font-size: 2.5rem;
-      color: $primary-color;
+    @media (max-width: 767.98px) {
       margin-bottom: 1rem;
-    }
-
-    h3 {
-      font-size: 2.5rem;
-      color: $text-color;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #666;
-      margin: 0;
     }
   }
 }
@@ -112,6 +121,17 @@ $light-bg: #f8f9fa;
 .services-section {
   padding: 4rem 0;
   background-color: #f8f9fa;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .section-title {
     margin-bottom: 3rem;
@@ -150,6 +170,11 @@ $light-bg: #f8f9fa;
       color: #666;
       line-height: 1.6;
     }
+
+    @media (max-width: 767.98px) {
+      margin-bottom: 1rem;
+      height: auto;
+    }
   }
 }
 
@@ -157,6 +182,17 @@ $light-bg: #f8f9fa;
 .methodology {
   padding: 6rem 0;
   background: white;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .timeline {
     position: relative;
@@ -277,6 +313,17 @@ $light-bg: #f8f9fa;
 .testimonials {
   padding: 6rem 0;
   background: $light-bg;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .testimonial-carousel {
     position: relative;
@@ -508,6 +555,17 @@ $light-bg: #f8f9fa;
 .service-intro {
   padding: 4rem 0;
   background: white;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .section-title {
     color: $primary-color;
@@ -563,6 +621,10 @@ $light-bg: #f8f9fa;
         }
       }
     }
+
+    @media (max-width: 767.98px) {
+      margin: 1rem 0;
+    }
   }
 
   .service-image {
@@ -603,6 +665,242 @@ $light-bg: #f8f9fa;
         opacity: 0.95;
         text-align: center;
         padding: 0 1rem;
+      }
+    }
+  }
+}
+
+// Methodology Section
+.methodology {
+  padding: 6rem 0;
+  background: white;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: $primary-color;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      margin-bottom: 3rem;
+      position: relative;
+      width: 50%;
+      padding: 0 2rem;
+
+      &:nth-child(odd) {
+        left: 0;
+        .timeline-content { 
+          text-align: right;
+          padding: 2rem;
+          padding-left: 100px;
+
+          .timeline-icon {
+            left: 20px;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        left: 50%;
+        .timeline-content { 
+          text-align: left;
+          padding: 2rem;
+          padding-right: 100px;
+
+          .timeline-icon {
+            right: 20px;
+          }
+        }
+      }
+
+      .timeline-content {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        position: relative;
+        overflow: hidden;
+
+        .timeline-icon {
+          width: 60px;
+          height: 60px;
+          background: $primary-color;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+
+          i {
+            color: white;
+            font-size: 1.5rem;
+          }
+        }
+
+        h3 {
+          color: $secondary-color;
+          margin-bottom: 1rem;
+          font-size: 1.5rem;
+        }
+
+        p {
+          color: $text-color;
+          margin: 0;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .timeline {
+      &::before {
+        left: 50px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding: 0 1rem;
+
+        .timeline-content {
+          text-align: right !important;
+          padding: 2rem !important;
+          padding-left: 100px !important;
+
+          .timeline-icon {
+            left: 20px !important;
+            right: auto !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Testimonials Section
+.testimonials {
+  padding: 6rem 0;
+  background: $light-bg;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
+
+  .testimonial-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+
+    .testimonial-slide {
+      display: none;
+      text-align: center;
+
+      &.active {
+        display: block;
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+
+      .testimonial-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 2rem;
+        overflow: hidden;
+        border: 5px solid white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        background-color: $primary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .testimonial-text {
+        font-size: 1.2rem;
+        font-style: italic;
+        color: $text-color;
+        margin-bottom: 2rem;
+      }
+
+      h4 {
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+      }
+
+      .testimonial-position {
+        color: $secondary-color;
+        margin-bottom: 0.25rem;
+      }
+
+      .testimonial-company {
+        color: $text-color;
+        font-size: 0.9rem;
+      }
+    }
+
+    .testimonial-controls {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+
+      button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: none;
+        background: #ddd;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          background: $primary-color;
+          transform: scale(1.2);
+        }
+
+        &:hover {
+          background: color.adjust(#ddd, $lightness: -10%);
+        }
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }

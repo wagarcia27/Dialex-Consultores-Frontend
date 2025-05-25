@@ -8,6 +8,12 @@ $light-bg: #f8f9fa;
 .service-page {
   margin-top: -2rem;
   overflow-x: hidden;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    margin-top: 0;
+    padding: 0;
+  }
 }
 
 // Hero Section
@@ -18,6 +24,13 @@ $light-bg: #f8f9fa;
   display: flex;
   align-items: center;
   overflow: hidden;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    height: auto;
+    min-height: 300px;
+    padding: 2rem 0;
+  }
 
   .gradient-overlay {
     position: absolute;
@@ -37,6 +50,11 @@ $light-bg: #f8f9fa;
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
 
     h1 {
       font-size: 3.5rem;
@@ -73,6 +91,17 @@ $light-bg: #f8f9fa;
 .stats-section {
   padding: 4rem 0;
   background-color: white;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .stat-card {
     text-align: center;
@@ -107,6 +136,17 @@ $light-bg: #f8f9fa;
 .services-section {
   padding: 4rem 0;
   background-color: $light-bg;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .section-title {
     margin-bottom: 3rem;
@@ -146,6 +186,11 @@ $light-bg: #f8f9fa;
       transform: translateY(-5px);
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     }
+
+    @media (max-width: 767.98px) {
+      margin-bottom: 1rem;
+      height: auto;
+    }
   }
 }
 
@@ -153,6 +198,17 @@ $light-bg: #f8f9fa;
 .methodology {
   padding: 6rem 0;
   background: white;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .timeline {
     position: relative;
@@ -273,6 +329,17 @@ $light-bg: #f8f9fa;
 .testimonials {
   padding: 6rem 0;
   background: $light-bg;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .testimonial-carousel {
     position: relative;
@@ -508,6 +575,17 @@ $light-bg: #f8f9fa;
 .service-intro {
   padding: 5rem 0;
   background-color: white;
+  width: 100%;
+  
+  @media (max-width: 767.98px) {
+    padding: 2rem 0;
+  }
+
+  .container {
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+    }
+  }
 
   .section-title {
     color: $primary-color;
@@ -560,6 +638,10 @@ $light-bg: #f8f9fa;
           color: $text-color;
         }
       }
+    }
+
+    @media (max-width: 767.98px) {
+      margin: 1rem 0;
     }
   }
 

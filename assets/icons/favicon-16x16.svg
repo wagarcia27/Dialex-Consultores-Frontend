@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <radialGradient id="smallGrad" cx="0.3" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#ff4757"/>
+      <stop offset="100%" stop-color="#dc3545"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Círculo principal -->
+  <circle cx="8" cy="8" r="7" fill="url(#smallGrad)"/>
+  
+  <!-- Letra "D" simplificada -->
+  <path d="M 4 4 L 4 12 L 8 12 C 10.5 12 12 10.5 12 8 C 12 5.5 10.5 4 8 4 Z M 5.5 5.5 L 8 5.5 C 9.5 5.5 10.5 6.5 10.5 8 C 10.5 9.5 9.5 10.5 8 10.5 L 5.5 10.5 Z" 
+        fill="#ffffff"/>
+</svg> 

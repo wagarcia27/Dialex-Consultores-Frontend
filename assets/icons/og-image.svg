@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Gradiente de fondo -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8f9fa"/>
+      <stop offset="100%" stop-color="#e9ecef"/>
+    </linearGradient>
+    
+    <!-- Gradiente para el logo -->
+    <radialGradient id="logoGrad" cx="0.3" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#ff4757"/>
+      <stop offset="100%" stop-color="#dc3545"/>
+    </radialGradient>
+    
+    <!-- Sombra -->
+    <filter id="ogShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="3" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Logo principal -->
+  <g transform="translate(150, 200)">
+    <!-- Círculo del logo -->
+    <circle cx="115" cy="115" r="100" 
+            fill="url(#logoGrad)" 
+            filter="url(#ogShadow)"/>
+    
+    <!-- Letra "D" -->
+    <path d="M 65 65 L 65 165 L 115 165 C 150 165 175 140 175 115 C 175 90 150 65 115 65 Z M 85 85 L 115 85 C 135 85 155 100 155 115 C 155 130 135 145 115 145 L 85 145 Z" 
+          fill="#ffffff"/>
+    
+    <!-- Elementos decorativos -->
+    <g stroke="#ffffff" stroke-width="6" stroke-linecap="round">
+      <line x1="185" y1="85" x2="205" y2="65"/>
+      <line x1="195" y1="115" x2="215" y2="95"/>
+      <line x1="185" y1="145" x2="205" y2="125"/>
+    </g>
+  </g>
+  
+  <!-- Texto principal -->
+  <text x="450" y="250" 
+        font-family="'Segoe UI', Arial, sans-serif" 
+        font-size="72" 
+        font-weight="700" 
+        fill="#dc3545">DIALEX</text>
+  
+  <text x="450" y="310" 
+        font-family="'Segoe UI', Arial, sans-serif" 
+        font-size="36" 
+        font-weight="400" 
+        fill="#6c757d">CONSULTORES</text>
+  
+  <!-- Descripción -->
+  <text x="450" y="380" 
+        font-family="'Segoe UI', Arial, sans-serif" 
+        font-size="28" 
+        font-weight="300" 
+        fill="#495057">Servicios Profesionales de</text>
+  
+  <text x="450" y="420" 
+        font-family="'Segoe UI', Arial, sans-serif" 
+        font-size="28" 
+        font-weight="300" 
+        fill="#495057">Contabilidad y Consultoría Financiera</text>
+  
+  <!-- Línea decorativa -->
+  <rect x="450" y="450" width="600" height="4" 
+        fill="#dc3545" 
+        rx="2"/>
+  
+  <!-- Elementos decorativos de fondo -->
+  <g opacity="0.1">
+    <circle cx="1000" cy="100" r="80" fill="#dc3545"/>
+    <circle cx="1100" cy="500" r="60" fill="#dc3545"/>
+    <rect x="50" y="500" width="100" height="100" rx="20" fill="#dc3545"/>
+  </g>
+</svg> 

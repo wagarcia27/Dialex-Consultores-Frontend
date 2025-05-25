@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, HostListener, Renderer2 } from '@angular/core';
+import { Component, ChangeDetectorRef, HostListener, Renderer2, OnInit } from '@angular/core';
 import { NavigationEnd, RouterOutlet, Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -14,7 +14,7 @@ declare var bootstrap: any;
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'dialexconsultores';
   isMenuOpen = false;
   isNavbarCollapsed = true;
@@ -26,11 +26,21 @@ export class AppComponent {
     private cdRef: ChangeDetectorRef,
     private renderer: Renderer2
   ) {
+    // Scroll al inicio al cargar/recargar la página
+    this.scrollToTopOnLoad();
+
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
       this.cerrarMenu();
       this.isNavbarCollapsed = true;
+      // También hacer scroll al inicio cuando se navega a una nueva página
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'auto' // Sin animación para navegación entre páginas
+        });
+      }, 100);
     });
 
     window.addEventListener('resize', () => {
@@ -41,6 +51,22 @@ export class AppComponent {
         this.renderer.removeClass(document.body, 'menu-open');
       }
     });
+  }
+
+  ngOnInit(): void {
+    // Asegurar scroll al inicio cuando el componente se inicializa
+    if (typeof window !== 'undefined') {
+      // Forzar scroll al inicio inmediatamente
+      window.scrollTo(0, 0);
+      
+      // También con un pequeño delay para asegurar que el DOM esté listo
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'auto'
+        });
+      }, 50);
+    }
   }
 
   @HostListener('document:click', ['$event'])
@@ -189,5 +215,33 @@ export class AppComponent {
     this.isNavbarCollapsed = true;
   }
 
+  // Método para hacer scroll al inicio al cargar/recargar la página
+  private scrollToTopOnLoad(): void {
+    // Verificar si la página se está cargando por primera vez o recargando
+    if (typeof window !== 'undefined') {
+      // Usar setTimeout para asegurar que el DOM esté completamente cargado
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'auto' // Sin animación para carga inicial
+        });
+      }, 0);
+      
+      // También agregar listener para el evento beforeunload (antes de recargar)
+      window.addEventListener('beforeunload', () => {
+        // Guardar que se va a recargar
+        sessionStorage.setItem('page-reloading', 'true');
+      });
+      
+      // Verificar si se recargó la página
+      if (sessionStorage.getItem('page-reloading') === 'true') {
+        sessionStorage.removeItem('page-reloading');
+        window.scrollTo({
+          top: 0,
+          behavior: 'auto'
+        });
+      }
+    }
+  }
 
 }

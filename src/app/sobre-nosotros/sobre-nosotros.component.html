@@ -4,16 +4,16 @@
     <div class="gradient-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <h1>Sobre Dialex Consultores</h1>
-        <p>Líderes en consultoría contable y financiera con más de una década de experiencia transformando empresas</p>
+        <h1>Dialex Consultores</h1>
+        <p class="hero-subtitle">Una nueva generación de consultoría contable y financiera, enfocada en la innovación, la tecnología y el crecimiento sostenible de tu empresa</p>
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-number">{{ stats.experience.current }}{{ stats.experience.suffix }}</span>
+            <span class="stat-number">{{ currentYear - foundingYear }}</span>
             <span class="stat-label">Años de Experiencia</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">{{ stats.clients.current }}{{ stats.clients.suffix }}</span>
-            <span class="stat-label">Clientes Satisfechos</span>
+            <span class="stat-label">Clientes Activos</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">{{ stats.commitment.current }}{{ stats.commitment.suffix }}</span>
@@ -31,37 +31,37 @@
         <div class="col-lg-6">
           <div class="story-content">
             <h2 class="section-title">Nuestra Historia</h2>
-            <p class="lead">Dialex Consultores nació en 2009 con la visión de revolucionar la consultoría contable y financiera en la región.</p>
-            <p>Fundada por un equipo de profesionales visionarios, nuestra empresa ha evolucionado desde sus humildes comienzos hasta convertirse en una de las consultoras más respetadas y confiables del sector.</p>
-            <p>Durante más de una década, hemos mantenido nuestro compromiso inquebrantable con la excelencia, la innovación y el servicio personalizado, adaptándonos constantemente a las necesidades cambiantes del mercado y las regulaciones fiscales.</p>
-            <p>Nuestro enfoque integral combina experiencia técnica, tecnología de vanguardia y un profundo entendimiento de los desafíos empresariales modernos.</p>
+            <p class="lead">Dialex Consultores nació en {{ foundingYear }} con una visión clara: modernizar la consultoría contable y financiera para las empresas del siglo XXI.</p>
+            <p>Fundada por un equipo de jóvenes profesionales con experiencia en firmas reconocidas, decidimos crear una consultora que combinara la solidez técnica tradicional con las herramientas digitales más avanzadas.</p>
+            <p>Aunque somos una empresa joven, nuestro equipo fundador aporta años de experiencia previa en el sector, lo que nos permite ofrecer servicios de alta calidad desde el primer día.</p>
+            <p>Creemos firmemente que el futuro de la consultoría está en la personalización, la agilidad y el uso inteligente de la tecnología para crear valor real para nuestros clientes.</p>
             <div class="story-highlights">
               <div class="highlight-item">
-                <i class="fas fa-calendar-alt"></i>
-                <span>Fundada en 2009 con visión de futuro</span>
+                <i class="fas fa-lightbulb"></i>
+                <span>Enfoque innovador y tecnológico</span>
               </div>
               <div class="highlight-item">
-                <i class="fas fa-trophy"></i>
-                <span>Múltiples reconocimientos por excelencia</span>
+                <i class="fas fa-users"></i>
+                <span>Equipo joven con experiencia sólida</span>
               </div>
               <div class="highlight-item">
-                <i class="fas fa-handshake"></i>
-                <span>Relaciones duraderas basadas en confianza</span>
+                <i class="fas fa-heart"></i>
+                <span>Atención personalizada y cercana</span>
               </div>
               <div class="highlight-item">
                 <i class="fas fa-chart-line"></i>
-                <span>Crecimiento sostenido año tras año</span>
+                <span>Crecimiento sostenible y responsable</span>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="story-image">
-            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Nuestra Historia" class="img-fluid rounded" (error)="onImageError($event)">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Equipo de trabajo moderno" class="img-fluid rounded" (error)="onImageError($event)">
             <div class="image-overlay">
               <div class="overlay-content">
-                <h3>15+ Años de Excelencia</h3>
-                <p>Construyendo el futuro financiero de nuestros clientes</p>
+                <h3>Nuevas Ideas, Resultados Sólidos</h3>
+                <p>Construyendo el futuro de la consultoría financiera</p>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@
     <div class="container">
       <div class="section-header text-center">
         <h2 class="section-title">Nuestros Pilares Fundamentales</h2>
-        <p class="section-subtitle">Los valores y principios que definen nuestra identidad y guían cada una de nuestras acciones</p>
+        <p class="section-subtitle">Los principios que guían nuestro trabajo y definen nuestra identidad como empresa</p>
       </div>
       <div class="row">
         <div class="col-lg-4 col-md-6 mb-4">
@@ -84,7 +84,7 @@
               <i class="fas fa-bullseye"></i>
             </div>
             <h3>Misión</h3>
-            <p>Brindar servicios contables y financieros de la más alta calidad, ayudando a nuestros clientes a alcanzar sus objetivos empresariales mediante soluciones innovadoras, precisas y oportunas que generen valor agregado sostenible a sus organizaciones.</p>
+            <p>Acompañar a empresas en crecimiento con servicios contables y financieros modernos, utilizando tecnología de vanguardia para simplificar procesos complejos y generar insights valiosos que impulsen la toma de decisiones estratégicas.</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
@@ -93,7 +93,7 @@
               <i class="fas fa-eye"></i>
             </div>
             <h3>Visión</h3>
-            <p>Ser la consultora contable líder en la región, reconocida por nuestra excelencia profesional, innovación tecnológica y compromiso inquebrantable con el éxito de nuestros clientes, estableciendo nuevos estándares de calidad en la industria.</p>
+            <p>Convertirnos en la consultora de referencia para empresas emergentes y en crecimiento, reconocida por nuestra capacidad de adaptación, innovación tecnológica y por crear relaciones duraderas basadas en la confianza y los resultados.</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-12 mb-4">
@@ -103,12 +103,12 @@
             </div>
             <h3>Valores</h3>
             <ul class="values-list">
-              <li><i class="fas fa-check"></i> Integridad y transparencia absoluta</li>
-              <li><i class="fas fa-check"></i> Excelencia profesional constante</li>
-              <li><i class="fas fa-check"></i> Compromiso total con el cliente</li>
-              <li><i class="fas fa-check"></i> Innovación y mejora continua</li>
-              <li><i class="fas fa-check"></i> Responsabilidad social empresarial</li>
-              <li><i class="fas fa-check"></i> Trabajo en equipo colaborativo</li>
+              <li><i class="fas fa-check"></i> Transparencia y honestidad</li>
+              <li><i class="fas fa-check"></i> Innovación constante</li>
+              <li><i class="fas fa-check"></i> Compromiso con el cliente</li>
+              <li><i class="fas fa-check"></i> Agilidad y flexibilidad</li>
+              <li><i class="fas fa-check"></i> Crecimiento sostenible</li>
+              <li><i class="fas fa-check"></i> Colaboración y trabajo en equipo</li>
             </ul>
           </div>
         </div>
@@ -120,8 +120,8 @@
   <section class="team-section">
     <div class="container">
       <div class="section-header text-center">
-        <h2 class="section-title">Nuestro Equipo Directivo</h2>
-        <p class="section-subtitle">Profesionales altamente calificados comprometidos con tu éxito empresarial</p>
+        <h2 class="section-title">Nuestro Equipo Fundador</h2>
+        <p class="section-subtitle">Profesionales experimentados unidos por la pasión de crear algo nuevo</p>
       </div>
       <div class="row">
         <div class="col-lg-4 col-md-6 mb-4" *ngFor="let member of teamMembers">
@@ -156,42 +156,42 @@
         <div class="col-lg-6">
           <div class="why-content">
             <h2 class="section-title">¿Por Qué Elegirnos?</h2>
-            <p class="lead">Somos más que una consultora contable, somos su socio estratégico para el crecimiento y la transformación empresarial.</p>
+            <p class="lead">Como empresa nueva, ofrecemos ventajas únicas que las consultoras tradicionales no pueden igualar.</p>
             <div class="why-features">
               <div class="feature-item">
                 <div class="feature-icon">
-                  <i class="fas fa-shield-alt"></i>
+                  <i class="fas fa-rocket"></i>
                 </div>
                 <div class="feature-content">
-                  <h4>Confiabilidad Garantizada</h4>
-                  <p>Procesos certificados ISO 9001:2015 y cumplimiento normativo al 100% con respaldo de seguros profesionales</p>
+                  <h4>Agilidad y Flexibilidad</h4>
+                  <p>Sin estructuras rígidas ni procesos burocráticos. Nos adaptamos rápidamente a tus necesidades específicas</p>
                 </div>
               </div>
               <div class="feature-item">
                 <div class="feature-icon">
-                  <i class="fas fa-clock"></i>
+                  <i class="fas fa-laptop-code"></i>
                 </div>
                 <div class="feature-content">
-                  <h4>Respuesta Oportuna</h4>
-                  <p>Entrega de informes y servicios en los tiempos acordados con sistema de seguimiento en tiempo real</p>
+                  <h4>Tecnología de Vanguardia</h4>
+                  <p>Utilizamos las herramientas más modernas del mercado para optimizar procesos y generar reportes en tiempo real</p>
                 </div>
               </div>
               <div class="feature-item">
                 <div class="feature-icon">
-                  <i class="fas fa-users"></i>
+                  <i class="fas fa-handshake"></i>
                 </div>
                 <div class="feature-content">
                   <h4>Atención Personalizada</h4>
-                  <p>Cada cliente recibe un servicio adaptado a sus necesidades específicas con un equipo dedicado</p>
+                  <p>Cada cliente es importante para nosotros. Recibes atención directa de los socios fundadores</p>
                 </div>
               </div>
               <div class="feature-item">
                 <div class="feature-icon">
-                  <i class="fas fa-chart-line"></i>
+                  <i class="fas fa-dollar-sign"></i>
                 </div>
                 <div class="feature-content">
-                  <h4>Enfoque Estratégico</h4>
-                  <p>Asesoría integral que impulsa el crecimiento, optimiza recursos y maximiza la rentabilidad</p>
+                  <h4>Precios Competitivos</h4>
+                  <p>Tarifas justas y transparentes, sin costos ocultos. Calidad profesional a precios accesibles</p>
                 </div>
               </div>
             </div>
@@ -199,47 +199,51 @@
         </div>
         <div class="col-lg-6">
           <div class="why-image">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Por qué elegirnos" class="img-fluid rounded" (error)="onImageError($event)">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Tecnología moderna" class="img-fluid rounded" (error)="onImageError($event)">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Certifications Section -->
-  <section class="certifications-section">
+  <!-- Our Approach Section -->
+  <section class="approach-section">
     <div class="container">
       <div class="section-header text-center">
-        <h2 class="section-title">Certificaciones y Reconocimientos</h2>
-        <p class="section-subtitle">Avalados por las principales instituciones nacionales e internacionales del sector</p>
+        <h2 class="section-title">Nuestro Enfoque</h2>
+        <p class="section-subtitle">Cómo trabajamos para asegurar tu éxito</p>
       </div>
       <div class="row">
-        <div class="col-lg-3 col-md-6 mb-4" *ngFor="let cert of certifications">
-          <div class="certification-card">
-            <div class="cert-icon">
-              <i [class]="cert.icon"></i>
+        <div class="col-lg-3 col-md-6 mb-4" *ngFor="let step of approachSteps; let i = index">
+          <div class="approach-card">
+            <div class="step-number">{{ i + 1 }}</div>
+            <div class="approach-icon">
+              <i [class]="step.icon"></i>
             </div>
-            <h4>{{ cert.title }}</h4>
-            <p>{{ cert.description }}</p>
+            <h4>{{ step.title }}</h4>
+            <p>{{ step.description }}</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Timeline Section -->
-  <section class="timeline-section">
+  <!-- Growth Journey Section -->
+  <section class="growth-section">
     <div class="container">
       <div class="section-header text-center">
-        <h2 class="section-title">Nuestra Trayectoria de Crecimiento</h2>
-        <p class="section-subtitle">Hitos importantes que han marcado nuestro desarrollo y evolución empresarial</p>
+        <h2 class="section-title">Nuestro Crecimiento</h2>
+        <p class="section-subtitle">Los hitos que hemos alcanzado desde nuestra fundación</p>
       </div>
-      <div class="timeline">
-        <div class="timeline-item" *ngFor="let event of timelineEvents">
-          <div class="timeline-year">{{ event.year }}</div>
+      <div class="growth-timeline">
+        <div class="timeline-item" *ngFor="let milestone of growthMilestones">
+          <div class="timeline-date">{{ milestone.date }}</div>
           <div class="timeline-content">
-            <h4>{{ event.title }}</h4>
-            <p>{{ event.description }}</p>
+            <div class="timeline-icon">
+              <i [class]="milestone.icon"></i>
+            </div>
+            <h4>{{ milestone.title }}</h4>
+            <p>{{ milestone.description }}</p>
           </div>
         </div>
       </div>
@@ -250,11 +254,10 @@
   <section class="contact-cta">
     <div class="container">
       <div class="cta-content text-center">
-        <h2>¿Listo para Transformar tu Gestión Financiera?</h2>
-        <p>Únete a más de 500 empresas que confían en nosotros para impulsar su crecimiento y optimizar sus procesos financieros</p>
+        <h2>¿Listo para Comenzar?</h2>
+        <p>Únete a las empresas que ya confían en nosotros para impulsar su crecimiento. Comencemos a construir juntos el futuro de tu negocio.</p>
         <div class="cta-buttons">
-          <a href="/contacto" class="btn btn-primary btn-lg">Contáctanos Ahora</a>
-          <a href="/servicios" class="btn btn-outline-light btn-lg">Conoce Nuestros Servicios</a>
+          <button (click)="scrollToContactForm()" class="btn btn-primary btn-lg">Contáctanos Ahora</button>
         </div>
       </div>
     </div>

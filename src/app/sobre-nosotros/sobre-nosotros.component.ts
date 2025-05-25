@@ -11,13 +11,14 @@ interface TeamMember {
   email?: string;
 }
 
-interface TimelineEvent {
-  year: string;
+interface GrowthMilestone {
+  date: string;
   title: string;
   description: string;
+  icon: string;
 }
 
-interface Certification {
+interface ApproachStep {
   title: string;
   description: string;
   icon: string;
@@ -31,99 +32,108 @@ interface Certification {
 })
 export class SobreNosotrosComponent implements OnInit {
   
-  // Datos del equipo directivo
+  // Año de fundación y año actual
+  foundingYear = 2023;
+  currentYear = new Date().getFullYear();
+
+  // Datos del equipo fundador (realistas para una empresa nueva)
   teamMembers: TeamMember[] = [
     {
-      name: 'Carlos García Mendoza',
-      position: 'Director General & Fundador',
-      description: 'CPA con más de 20 años de experiencia en consultoría financiera, auditoría y gestión empresarial. Especialista en reestructuración corporativa y planificación estratégica.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80',
-      credentials: ['CPA', 'MBA', 'CFE'],
+      name: 'Carlos García',
+      position: 'Socio Fundador & Director General',
+      description: 'Contador Público con 8 años de experiencia en firmas reconocidas. Especialista en consultoría financiera para PYMES y empresas en crecimiento.',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      credentials: ['CP', 'Especialista en NIIF'],
       linkedin: 'https://linkedin.com/in/carlos-garcia-dialex',
       email: 'carlos.garcia@dialexconsultores.com'
     },
     {
-      name: 'María Rodríguez Silva',
-      position: 'Directora de Auditoría & Compliance',
-      description: 'Especialista en auditoría externa e interna con certificaciones internacionales. Experta en sistemas de control interno y cumplimiento normativo para empresas multinacionales.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80',
-      credentials: ['CIA', 'CPA', 'CISA'],
+      name: 'María Rodríguez',
+      position: 'Socia Fundadora & Directora de Auditoría',
+      description: 'Contadora Pública con experiencia en auditoría externa e interna. Experta en implementación de controles internos y cumplimiento normativo.',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      credentials: ['CP', 'Auditor Interno'],
       linkedin: 'https://linkedin.com/in/maria-rodriguez-dialex',
       email: 'maria.rodriguez@dialexconsultores.com'
     },
     {
-      name: 'Luis Martínez Torres',
-      position: 'Director Tributario & Legal',
-      description: 'Experto en legislación fiscal nacional e internacional, planificación tributaria estratégica y asesoría legal empresarial. Especialista en optimización fiscal para PYMES y grandes corporaciones.',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80',
-      credentials: ['LLM', 'CPA', 'MTI'],
+      name: 'Luis Martínez',
+      position: 'Socio Fundador & Director Tributario',
+      description: 'Contador Público especializado en legislación fiscal y planificación tributaria. Experiencia en asesoría fiscal para diversos sectores económicos.',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      credentials: ['CP', 'Especialista Tributario'],
       linkedin: 'https://linkedin.com/in/luis-martinez-dialex',
       email: 'luis.martinez@dialexconsultores.com'
     }
   ];
 
-  // Timeline detallado de la empresa
-  timelineEvents: TimelineEvent[] = [
+  // Hitos de crecimiento (realistas para una empresa nueva)
+  growthMilestones: GrowthMilestone[] = [
     {
-      year: '2009',
+      date: 'Enero 2023',
       title: 'Fundación de Dialex Consultores',
-      description: 'Inicio de operaciones con un equipo fundador de 3 profesionales especializados en contabilidad general y auditoría, estableciendo las bases de lo que sería una empresa líder en el sector.'
+      description: 'Tres profesionales con experiencia previa deciden unirse para crear una consultora moderna y ágil.',
+      icon: 'fas fa-rocket'
     },
     {
-      year: '2012',
-      title: 'Expansión de Servicios Especializados',
-      description: 'Incorporación de servicios de auditoría externa, consultoría tributaria avanzada y asesoría financiera estratégica. Apertura de segunda oficina y crecimiento del equipo a 8 profesionales.'
+      date: 'Marzo 2023',
+      title: 'Primeros Clientes',
+      description: 'Conseguimos nuestros primeros 5 clientes, validando nuestro enfoque y propuesta de valor.',
+      icon: 'fas fa-handshake'
     },
     {
-      year: '2015',
-      title: 'Certificación ISO 9001:2015',
-      description: 'Obtención de la prestigiosa certificación ISO 9001:2015 en Sistemas de Gestión de Calidad, consolidando nuestro compromiso con la excelencia y mejora continua en todos nuestros procesos.'
+      date: 'Junio 2023',
+      title: 'Implementación Tecnológica',
+      description: 'Adoptamos herramientas digitales avanzadas para optimizar nuestros procesos y mejorar la experiencia del cliente.',
+      icon: 'fas fa-laptop-code'
     },
     {
-      year: '2018',
-      title: 'Transformación Digital',
-      description: 'Implementación de plataformas tecnológicas de vanguardia para optimizar la gestión de procesos, incluyendo sistemas de gestión documental digital y herramientas de análisis financiero avanzado.'
+      date: 'Septiembre 2023',
+      title: 'Expansión de Servicios',
+      description: 'Ampliamos nuestra oferta incluyendo consultoría en transformación digital y análisis financiero avanzado.',
+      icon: 'fas fa-chart-line'
     },
     {
-      year: '2021',
-      title: 'Reconocimiento a la Excelencia',
-      description: 'Premio a la Excelencia en Servicios Profesionales otorgado por la Cámara de Comercio Regional. Expansión a servicios de consultoría en transformación digital empresarial.'
+      date: 'Diciembre 2023',
+      title: 'Crecimiento Sostenido',
+      description: 'Cerramos el primer año con 25+ clientes satisfechos y un equipo consolidado de profesionales.',
+      icon: 'fas fa-trophy'
     },
     {
-      year: '2024',
-      title: 'Liderazgo Consolidado',
-      description: 'Más de 500 clientes satisfechos, equipo de 25 profesionales especializados y reconocimiento como una de las consultoras más confiables de la región. Expansión a mercados internacionales.'
-    }
-  ];
-
-  // Certificaciones y reconocimientos
-  certifications: Certification[] = [
-    {
-      title: 'ISO 9001:2015',
-      description: 'Certificación Internacional en Sistemas de Gestión de Calidad que garantiza la excelencia en nuestros procesos',
-      icon: 'fas fa-certificate'
-    },
-    {
-      title: 'CPA Certification',
-      description: 'Contadores Públicos Autorizados certificados por organismos nacionales e internacionales reconocidos',
-      icon: 'fas fa-award'
-    },
-    {
-      title: 'IFAC Member',
-      description: 'Miembro activo de la Federación Internacional de Contadores, garantizando estándares globales de calidad',
-      icon: 'fas fa-medal'
-    },
-    {
-      title: 'Excellence Award 2023',
-      description: 'Premio a la Excelencia en Servicios Profesionales otorgado por la Cámara de Comercio Regional',
+      date: 'Presente',
+      title: 'Consolidación y Futuro',
+      description: 'Continuamos creciendo de manera sostenible, enfocados en la calidad del servicio y la innovación constante.',
       icon: 'fas fa-star'
     }
   ];
 
-  // Estadísticas animadas
+  // Pasos de nuestro enfoque de trabajo
+  approachSteps: ApproachStep[] = [
+    {
+      title: 'Diagnóstico',
+      description: 'Analizamos tu situación actual y identificamos oportunidades de mejora específicas para tu empresa.',
+      icon: 'fas fa-search'
+    },
+    {
+      title: 'Planificación',
+      description: 'Diseñamos una estrategia personalizada que se adapte a tus objetivos y recursos disponibles.',
+      icon: 'fas fa-clipboard-list'
+    },
+    {
+      title: 'Implementación',
+      description: 'Ejecutamos las soluciones de manera ágil, manteniendo comunicación constante contigo.',
+      icon: 'fas fa-cogs'
+    },
+    {
+      title: 'Seguimiento',
+      description: 'Monitoreamos los resultados y ajustamos la estrategia según sea necesario para asegurar el éxito.',
+      icon: 'fas fa-chart-bar'
+    }
+  ];
+
+  // Estadísticas realistas para una empresa nueva
   stats = {
-    experience: { current: 0, target: 15, suffix: '+' },
-    clients: { current: 0, target: 500, suffix: '+' },
+    clients: { current: 0, target: 25, suffix: '+' },
     commitment: { current: 0, target: 100, suffix: '%' }
   };
 
@@ -134,24 +144,19 @@ export class SobreNosotrosComponent implements OnInit {
     this.observeElements();
   }
 
-  // Animación de estadísticas con efecto contador
+  // Animación de estadísticas
   private animateStats(): void {
-    const duration = 2500; // 2.5 segundos para una animación más suave
-    const steps = 80; // Más pasos para mayor suavidad
+    const duration = 2000;
+    const steps = 60;
     const stepDuration = duration / steps;
 
-    // Animar experiencia
-    this.animateNumber('experience', stepDuration, steps);
+    // Animar clientes
+    this.animateNumber('clients', stepDuration, steps);
     
-    // Animar clientes (con delay escalonado)
-    setTimeout(() => {
-      this.animateNumber('clients', stepDuration, steps);
-    }, 600);
-    
-    // Animar compromiso (con delay escalonado)
+    // Animar compromiso (con delay)
     setTimeout(() => {
       this.animateNumber('commitment', stepDuration, steps);
-    }, 1200);
+    }, 800);
   }
 
   private animateNumber(statKey: keyof typeof this.stats, stepDuration: number, totalSteps: number): void {
@@ -162,7 +167,6 @@ export class SobreNosotrosComponent implements OnInit {
     const timer = setInterval(() => {
       currentStep++;
       
-      // Usar una función de easing para hacer la animación más natural
       const progress = currentStep / totalSteps;
       const easedProgress = this.easeOutQuart(progress);
       stat.current = Math.min(Math.round(stat.target * easedProgress), stat.target);
@@ -174,52 +178,44 @@ export class SobreNosotrosComponent implements OnInit {
     }, stepDuration);
   }
 
-  // Función de easing para animaciones más naturales
   private easeOutQuart(t: number): number {
     return 1 - Math.pow(1 - t, 4);
   }
 
-  // Observer mejorado para animaciones al hacer scroll
+  // Observer para animaciones al hacer scroll
   private observeElements(): void {
     if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate-in');
-            // Opcional: dejar de observar el elemento una vez animado
-            // observer.unobserve(entry.target);
           }
         });
       }, {
-        threshold: 0.15, // Activar cuando el 15% del elemento sea visible
-        rootMargin: '0px 0px -80px 0px' // Margen para activar la animación antes
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px'
       });
 
-      // Observar elementos después de asegurar que el DOM esté listo
       setTimeout(() => {
         const elementsToObserve = document.querySelectorAll(
-          '.mvv-card, .team-card, .certification-card, .timeline-item, .feature-item'
+          '.mvv-card, .team-card, .feature-item, .approach-card, .timeline-item'
         );
         elementsToObserve.forEach(el => observer.observe(el));
-      }, 150);
+      }, 100);
     }
   }
 
-  // Método mejorado para manejar errores de carga de imágenes
+  // Manejo de errores de imagen
   onImageError(event: any): void {
-    const target = event.target;
-    target.src = 'https://via.placeholder.com/400x400/667eea/ffffff?text=Dialex+Consultores';
-    target.alt = 'Imagen no disponible - Dialex Consultores';
-    
-    // Agregar clase para estilos específicos de imagen de error
-    target.classList.add('image-error');
+    const img = event.target;
+    img.src = 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
   }
 
-  // Método para scroll suave a secciones específicas
+  // Navegación a secciones
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerOffset = 100; // Offset para el header fijo
+      const headerOffset = 100;
       const elementPosition = element.offsetTop;
       const offsetPosition = elementPosition - headerOffset;
 
@@ -230,28 +226,47 @@ export class SobreNosotrosComponent implements OnInit {
     }
   }
 
-  // Método mejorado para abrir enlaces externos
+  // Abrir enlaces externos
   openExternalLink(url: string): void {
     if (url && url !== '#') {
-      // Validar que sea una URL válida
-      try {
-        new URL(url);
-        window.open(url, '_blank', 'noopener,noreferrer');
-      } catch (error) {
-        console.warn('URL inválida:', url);
-        // Opcional: mostrar mensaje al usuario
-      }
+      window.open(url, '_blank', 'noopener,noreferrer');
     }
   }
 
-  // Método para obtener el año actual
+  // Obtener año actual
   getCurrentYear(): number {
-    return new Date().getFullYear();
+    return this.currentYear;
   }
 
-  // Método para calcular años de experiencia dinámicamente
+  // Obtener años de experiencia
   getYearsOfExperience(): number {
-    const foundingYear = 2009;
-    return this.getCurrentYear() - foundingYear;
+    return this.currentYear - this.foundingYear;
+  }
+
+  // Scroll al formulario de contacto
+  scrollToContactForm(): void {
+    // Buscar el formulario de contacto en la página
+    const contactSection = document.querySelector('.contact-form-wrapper') || 
+                          document.querySelector('app-contact-form') ||
+                          document.querySelector('.contact-cta') ||
+                          document.querySelector('[class*="contact"]') ||
+                          document.querySelector('[class*="form"]');
+    
+    if (contactSection) {
+      const headerOffset = 100;
+      const elementPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    } else {
+      // Si no encuentra el formulario en la página, scroll al final
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
   }
 }

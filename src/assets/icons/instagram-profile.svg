@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <!-- Gradiente de fondo -->
+    <radialGradient id="instaBg" cx="0.5" cy="0.5" r="0.8">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8f9fa"/>
+    </radialGradient>
+    
+    <!-- Gradiente para el logo -->
+    <radialGradient id="instaLogo" cx="0.3" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#ff4757"/>
+      <stop offset="100%" stop-color="#dc3545"/>
+    </radialGradient>
+    
+    <!-- Sombra -->
+    <filter id="instaShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="5" dy="5" stdDeviation="8" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="1080" height="1080" fill="url(#instaBg)"/>
+  
+  <!-- Logo principal centrado -->
+  <g transform="translate(540, 540)">
+    <!-- Círculo del logo -->
+    <circle cx="0" cy="0" r="180" 
+            fill="url(#instaLogo)" 
+            filter="url(#instaShadow)"/>
+    
+    <!-- Letra "D" -->
+    <path d="M -90 -90 L -90 90 L 0 90 C 90 90 150 30 150 0 C 150 -30 90 -90 0 -90 Z M -50 -50 L 0 -50 C 50 -50 100 -25 100 0 C 100 25 50 50 0 50 L -50 50 Z" 
+          fill="#ffffff"/>
+    
+    <!-- Elementos decorativos -->
+    <g stroke="#ffffff" stroke-width="8" stroke-linecap="round">
+      <line x1="120" y1="-60" x2="150" y2="-90"/>
+      <line x1="135" y1="0" x2="165" y2="-30"/>
+      <line x1="120" y1="60" x2="150" y2="30"/>
+    </g>
+  </g>
+  
+  <!-- Texto principal -->
+  <text x="540" y="780" 
+        font-family="'Segoe UI', Arial, sans-serif" 
+        font-size="80" 
+        font-weight="700" 
+        fill="#dc3545"
+        text-anchor="middle">DIALEX</text>
+  
+  <text x="540" y="850" 
+        font-family="'Segoe UI', Arial, sans-serif" 
+        font-size="40" 
+        font-weight="400" 
+        fill="#6c757d"
+        text-anchor="middle">CONSULTORES</text>
+  
+  <!-- Descripción -->
+  <text x="540" y="920" 
+        font-family="'Segoe UI', Arial, sans-serif" 
+        font-size="32" 
+        font-weight="300" 
+        fill="#495057"
+        text-anchor="middle">Servicios Contables y Financieros</text>
+  
+  <!-- Línea decorativa -->
+  <rect x="340" y="950" width="400" height="6" 
+        fill="#dc3545" 
+        rx="3"/>
+  
+  <!-- Elementos decorativos de fondo -->
+  <g opacity="0.08">
+    <circle cx="150" cy="150" r="80" fill="#dc3545"/>
+    <circle cx="930" cy="930" r="60" fill="#dc3545"/>
+    <rect x="50" y="850" width="80" height="80" rx="15" fill="#dc3545"/>
+    <rect x="950" y="50" width="80" height="80" rx="15" fill="#dc3545"/>
+  </g>
+</svg> 

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <!-- Gradiente de fondo -->
+    <radialGradient id="fbBg" cx="0.5" cy="0.5" r="0.9">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0f2f5"/>
+    </radialGradient>
+    
+    <!-- Gradiente para el logo -->
+    <radialGradient id="fbLogo" cx="0.3" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#ff4757"/>
+      <stop offset="100%" stop-color="#dc3545"/>
+    </radialGradient>
+    
+    <!-- Sombra -->
+    <filter id="fbShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="4" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="800" height="800" fill="url(#fbBg)"/>
+  
+  <!-- Logo principal centrado -->
+  <g transform="translate(400, 400)">
+    <!-- Círculo del logo -->
+    <circle cx="0" cy="0" r="150" 
+            fill="url(#fbLogo)" 
+            filter="url(#fbShadow)"/>
+    
+    <!-- Letra "D" -->
+    <path d="M -75 -75 L -75 75 L 0 75 C 75 75 125 25 125 0 C 125 -25 75 -75 0 -75 Z M -40 -40 L 0 -40 C 40 -40 80 -20 80 0 C 80 20 40 40 0 40 L -40 40 Z" 
+          fill="#ffffff"/>
+    
+    <!-- Elementos decorativos -->
+    <g stroke="#ffffff" stroke-width="6" stroke-linecap="round">
+      <line x1="100" y1="-50" x2="125" y2="-75"/>
+      <line x1="112" y1="0" x2="137" y2="-25"/>
+      <line x1="100" y1="50" x2="125" y2="25"/>
+    </g>
+  </g>
+  
+  <!-- Texto principal -->
+  <text x="400" y="600" 
+        font-family="'Segoe UI', Arial, sans-serif" 
+        font-size="60" 
+        font-weight="700" 
+        fill="#dc3545"
+        text-anchor="middle">DIALEX</text>
+  
+  <text x="400" y="650" 
+        font-family="'Segoe UI', Arial, sans-serif" 
+        font-size="30" 
+        font-weight="400" 
+        fill="#6c757d"
+        text-anchor="middle">CONSULTORES</text>
+  
+  <!-- Línea decorativa -->
+  <rect x="250" y="680" width="300" height="4" 
+        fill="#dc3545" 
+        rx="2"/>
+  
+  <!-- Elementos decorativos de fondo -->
+  <g opacity="0.06">
+    <circle cx="120" cy="120" r="60" fill="#dc3545"/>
+    <circle cx="680" cy="680" r="50" fill="#dc3545"/>
+    <rect x="50" y="650" width="60" height="60" rx="12" fill="#dc3545"/>
+    <rect x="690" y="50" width="60" height="60" rx="12" fill="#dc3545"/>
+  </g>
+</svg> 

@@ -1,0 +1,604 @@
+@use "sass:color";
+
+$primary-color: #dc3545;
+$secondary-color: #3f89d3;
+$text-color: #333;
+$light-bg: #f8f9fa;
+
+// Keyframes para animaciones
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// Nuevo keyframe para el gradiente animado
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.service-page {
+  margin-top: -2rem;
+  overflow-x: hidden;
+}
+
+// Hero Section con Gradiente Animado
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  color: white;
+  overflow: hidden;
+
+  .gradient-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, $primary-color, $secondary-color, #2c3e50, #2980b9);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    z-index: -1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+    }
+  }
+
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+
+      .btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+      }
+    }
+  }
+}
+
+// Estadísticas Animadas
+.statistics {
+  padding: 4rem 0;
+  background: white;
+
+  .stat-card {
+    text-align: center;
+    padding: 2rem;
+    animation: countUp 1s ease-out forwards;
+
+    i {
+      font-size: 3rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      color: $secondary-color;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $text-color;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// Descripción del Servicio con Parallax
+.service-description {
+  padding: 6rem 0;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.95);
+  }
+
+  .container {
+    position: relative;
+  }
+
+  h2 {
+    color: $primary-color;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $text-color;
+  }
+
+  .benefits {
+    margin-top: 2rem;
+
+    h3 {
+      color: $secondary-color;
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+
+        i {
+          color: $primary-color;
+          margin-right: 1rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .image-container {
+    &.floating {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    img {
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+  }
+}
+
+// Servicios Específicos con Hover Effects
+.specific-services {
+  padding: 6rem 0;
+  background-color: $light-bg;
+
+  .service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+
+      .service-hover {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .icon-container i {
+        transform: scale(1.1);
+        color: $secondary-color;
+      }
+    }
+
+    .icon-container {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      transition: transform 0.3s ease;
+
+      i {
+        font-size: 3rem;
+        color: $primary-color;
+        transition: all 0.3s ease;
+      }
+    }
+
+    h3 {
+      color: $primary-color;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $text-color;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .service-hover {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      padding: 2rem;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+// Metodología con Timeline
+.methodology {
+  padding: 6rem 0;
+  background: white;
+
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: $secondary-color;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      margin-bottom: 2rem;
+      position: relative;
+      width: 50%;
+      padding: 0 2rem;
+
+      &:nth-child(odd) {
+        left: 0;
+        .timeline-content { text-align: right; }
+      }
+
+      &:nth-child(even) {
+        left: 50%;
+        .timeline-content { text-align: left; }
+      }
+
+      .timeline-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        position: relative;
+
+        .timeline-icon {
+          width: 50px;
+          height: 50px;
+          background: $primary-color;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+
+          i {
+            color: white;
+            font-size: 1.5rem;
+          }
+        }
+
+        h3 {
+          color: $secondary-color;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          color: $text-color;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+// Testimonios Carrusel
+.testimonials {
+  padding: 6rem 0;
+  background: $light-bg;
+
+  .testimonial-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+
+    .testimonial-slide {
+      display: none;
+      text-align: center;
+
+      &.active {
+        display: block;
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+
+      .testimonial-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 2rem;
+        overflow: hidden;
+        border: 5px solid white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          background: linear-gradient(45deg, $primary-color, $secondary-color);
+        }
+      }
+
+      .testimonial-text {
+        font-size: 1.2rem;
+        font-style: italic;
+        color: $text-color;
+        margin-bottom: 2rem;
+      }
+
+      h4 {
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+      }
+
+      .testimonial-position {
+        color: $secondary-color;
+        margin-bottom: 0.25rem;
+      }
+
+      .testimonial-company {
+        color: $text-color;
+        font-size: 0.9rem;
+      }
+    }
+
+    .testimonial-controls {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+
+      button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: none;
+        background: #ddd;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          background: $primary-color;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+// CTA Final
+.cta-section {
+  padding: 6rem 0;
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+              url('/assets/cta-bg.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .btn {
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+    }
+  }
+}
+
+// Placeholder para la imagen principal
+.placeholder-image {
+  background: linear-gradient(135deg, $secondary-color, darken($secondary-color, 20%));
+  border-radius: 10px;
+  padding: 3rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+  i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  span {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+// Ajustes para los iconos en la metodología
+.methodology {
+  .timeline-content {
+    .timeline-icon {
+      i {
+        color: white;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+// Responsive Styles
+@media (max-width: 991.98px) {
+  .hero-section {
+    height: 80vh;
+
+    .hero-content {
+      h1 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .methodology {
+    .timeline {
+      &::before {
+        left: 0;
+      }
+
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 3rem;
+
+        .timeline-content {
+          text-align: left !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-section {
+    height: 60vh;
+
+    .hero-content {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  }
+
+  .statistics {
+    .stat-card {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .service-description {
+    .image-container {
+      margin-top: 2rem;
+    }
+  }
+
+  .specific-services {
+    .service-card {
+      margin-bottom: 2rem;
+    }
+  }
+} 

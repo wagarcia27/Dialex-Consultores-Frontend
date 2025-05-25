@@ -1,1 +1,146 @@
-<p>auditoria-interna works!</p>
+<div class="service-page">
+  <!-- Hero Section con Gradiente Animado -->
+  <section class="hero-section">
+    <div class="gradient-background"></div>
+    <div class="hero-content" @fadeIn>
+      <h1>Auditoría Interna</h1>
+      <p>Optimizamos sus procesos internos para maximizar la eficiencia operativa</p>
+      <div class="hero-cta">
+        <a (click)="scrollToForm()" class="btn btn-primary">Solicitar Consulta</a>
+        <a (click)="scrollToSection('servicios')" class="btn btn-outline-light">Conocer Más</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estadísticas Animadas -->
+  <section class="statistics" @fadeInUp>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" *ngFor="let stat of estadisticas">
+          <div class="stat-card">
+            <i [class]="stat.icono"></i>
+            <h3 class="counter">{{stat.numero}}</h3>
+            <p>{{stat.texto}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Descripción del Servicio con Parallax -->
+  <section class="service-description parallax-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" @fadeInUp>
+          <h2>Expertos en Auditoría Interna</h2>
+          <p>
+            En Dialex Consultores, nos especializamos en fortalecer el control interno de su organización. Nuestro equipo de auditores internos trabaja de manera proactiva para identificar oportunidades de mejora y establecer controles efectivos que aseguren la eficiencia operativa.
+          </p>
+          <div class="benefits">
+            <h3>Beneficios de nuestro servicio:</h3>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Mejora continua de procesos</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Gestión efectiva de riesgos</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Fortalecimiento del control interno</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Optimización de recursos</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="image-container floating">
+            <div class="placeholder-image">
+              <i class="fas fa-shield-alt"></i>
+              <span>Auditoría Interna</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Específicos con Hover Effects -->
+  <section id="servicios" class="specific-services">
+    <div class="container">
+      <h2 class="text-center mb-5">Nuestros Servicios de Auditoría Interna</h2>
+      <div class="row">
+        <div class="col-md-6 col-lg-3" *ngFor="let servicio of servicios">
+          <div class="service-card" @fadeInUp [style.animation-delay]="servicio.animationDelay">
+            <div class="icon-container">
+              <i [class]="servicio.icono"></i>
+            </div>
+            <h3>{{servicio.titulo}}</h3>
+            <p>{{servicio.descripcion}}</p>
+            <div class="service-hover">
+              <a (click)="scrollToForm()" class="btn btn-outline-light">Más Información</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metodología con Timeline -->
+  <section class="methodology">
+    <div class="container">
+      <h2 class="text-center">Nuestra Metodología</h2>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let paso of metodologia; let i = index" @fadeInUp>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i [class]="paso.icono"></i>
+            </div>
+            <h3>{{paso.fase}}</h3>
+            <p>{{paso.descripcion}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrusel de Testimonios -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="text-center mb-5">Lo que dicen nuestros clientes</h2>
+      <div class="testimonial-carousel">
+        <div class="testimonial-slide" *ngFor="let testimonio of testimonios; let i = index" 
+             [class.active]="i === currentSlide" @fadeIn>
+          <div class="testimonial-content">
+            <div class="testimonial-image">
+              <img [src]="testimonio.imagen" [alt]="testimonio.nombre">
+            </div>
+            <p class="testimonial-text">"{{testimonio.comentario}}"</p>
+            <h4>{{testimonio.nombre}}</h4>
+            <p class="testimonial-position">{{testimonio.cargo}}</p>
+            <p class="testimonial-company">{{testimonio.empresa}}</p>
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <button *ngFor="let _ of testimonios; let i = index" 
+                  [class.active]="i === currentSlide"
+                  (click)="currentSlide = i"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2>¿Listo para optimizar sus procesos internos?</h2>
+      <p>Contáctenos hoy mismo para una consulta personalizada</p>
+      <a (click)="scrollToForm()" class="btn btn-primary btn-lg">Solicitar Información</a>
+    </div>
+  </section>
+</div>

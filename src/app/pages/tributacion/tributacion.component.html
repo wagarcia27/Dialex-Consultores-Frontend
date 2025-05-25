@@ -1,1 +1,94 @@
-<p>tributacion works!</p>
+<div class="service-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Tributación</h1>
+      <p>Optimice su gestión tributaria con nuestro equipo de expertos fiscales</p>
+    </div>
+  </section>
+
+  <!-- Descripción del Servicio -->
+  <section class="service-description">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Expertos en Asesoría Tributaria</h2>
+          <p>
+            En Dialex Consultores, entendemos que la gestión tributaria es un aspecto crucial para el éxito de su empresa. Nuestro equipo de especialistas fiscales está dedicado a proporcionar soluciones efectivas y actualizadas que aseguren el cumplimiento de todas las obligaciones tributarias mientras se optimiza la carga fiscal de manera legal y eficiente.
+          </p>
+          <div class="benefits">
+            <h3>Ventajas de nuestro servicio:</h3>
+            <ul>
+              <li>Optimización de la carga tributaria</li>
+              <li>Prevención de riesgos fiscales</li>
+              <li>Actualización constante en normativa tributaria</li>
+              <li>Ahorro en costos fiscales</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="image-container">
+            <img src="assets/tributacion-hero.jpg" alt="Servicios Tributarios" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Específicos -->
+  <section class="specific-services">
+    <div class="container">
+      <h2 class="text-center mb-5">Nuestros Servicios Tributarios</h2>
+      <div class="row">
+        <div class="col-md-6 col-lg-3" *ngFor="let servicio of servicios">
+          <div class="service-card">
+            <div class="icon-container">
+              <img [src]="servicio.icono" [alt]="servicio.titulo">
+            </div>
+            <h3>{{servicio.titulo}}</h3>
+            <p>{{servicio.descripcion}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué Elegirnos -->
+  <section class="why-choose-us">
+    <div class="container">
+      <h2 class="text-center">¿Por qué elegir nuestros servicios tributarios?</h2>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="feature">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Seguridad Fiscal</h3>
+            <p>Garantizamos el cumplimiento de todas las obligaciones tributarias</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature">
+            <i class="fas fa-chart-line"></i>
+            <h3>Optimización Fiscal</h3>
+            <p>Estrategias efectivas para maximizar beneficios tributarios</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature">
+            <i class="fas fa-balance-scale"></i>
+            <h3>Respaldo Legal</h3>
+            <p>Soporte completo en procesos y requerimientos fiscales</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de Contacto -->
+  <section class="contact-section" id="contacto">
+    <div class="container">
+      <h2 class="text-center mb-4">¿Necesita asesoría tributaria?</h2>
+      <p class="text-center mb-5">Contáctenos para una consulta especializada</p>
+      <app-contact-form></app-contact-form>
+    </div>
+  </section>
+</div>

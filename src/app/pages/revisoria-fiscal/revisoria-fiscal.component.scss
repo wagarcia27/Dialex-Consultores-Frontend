@@ -15,10 +15,7 @@ $light-bg: #f8f9fa;
     padding: 0;
   }
 
-  // Justificar todos los textos
-  p, .testimonial-text, .description, span {
-    text-align: justify;
-  }
+
 }
 
 // Hero Section
@@ -221,7 +218,6 @@ $light-bg: #f8f9fa;
 
         span {
           color: $text-color;
-          text-align: justify;
         }
       }
     }
@@ -317,7 +313,6 @@ $light-bg: #f8f9fa;
       color: $text-color;
       font-size: 1rem;
       line-height: 1.6;
-      text-align: justify;
     }
 
     &:hover {
@@ -432,7 +427,6 @@ $light-bg: #f8f9fa;
           color: $text-color;
           margin: 0;
           line-height: 1.6;
-          text-align: justify;
         }
       }
     }
@@ -516,7 +510,6 @@ $light-bg: #f8f9fa;
         font-style: italic;
         color: $text-color;
         margin-bottom: 2rem;
-        text-align: justify;
       }
 
       h4 {
@@ -646,7 +639,6 @@ $light-bg: #f8f9fa;
 
       p {
         font-size: 0.9rem;
-        text-align: justify;
       }
     }
   }
@@ -658,7 +650,6 @@ $light-bg: #f8f9fa;
 
     .description {
       font-size: 1rem;
-      text-align: justify;
     }
 
     .benefits {
@@ -672,7 +663,6 @@ $light-bg: #f8f9fa;
         font-size: 1rem;
 
         span {
-          text-align: justify;
         }
       }
     }

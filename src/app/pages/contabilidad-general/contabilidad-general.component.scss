@@ -15,10 +15,7 @@ $light-bg: #f8f9fa;
     padding: 0;
   }
 
-  // Justificar todos los textos
-  p, .testimonial-text, .description, span {
-    text-align: justify;
-  }
+
 }
 
 // Hero Section
@@ -434,6 +431,7 @@ $light-bg: #f8f9fa;
     line-height: 1.8;
     color: $text-color;
     margin-bottom: 2rem;
+    text-align: justify;
   }
 
   .benefits {

@@ -552,10 +552,17 @@ body {
 // Contenedor principal
 .main-content {
   flex: 1;
-  margin-top: calc(#{$top-bar-height} + #{$navbar-height} - 1px);
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  ::ng-deep {
+    .service-page {
+      .hero-section {
+        padding-top: calc(#{$top-bar-height} + #{$navbar-height});
+      }
+    }
+  }
 }
 
 .contact-form-wrapper {

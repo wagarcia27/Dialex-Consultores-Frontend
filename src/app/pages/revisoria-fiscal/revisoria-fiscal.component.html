@@ -1,50 +1,87 @@
 <div class="service-page">
   <!-- Hero Section -->
   <section class="hero-section">
-    <div class="hero-content">
-      <h1>Revisoría Fiscal</h1>
-      <p>Garantizamos el cumplimiento y la transparencia en su organización</p>
+    <div class="gradient-overlay"></div>
+    <div class="container">
+      <div class="hero-content" @fadeInUp>
+        <h1>Revisoría Fiscal</h1>
+        <p>Control y vigilancia profesional para la seguridad de su empresa</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" (click)="scrollToForm()">Solicitar Consulta</button>
+          <button class="btn btn-outline-light" (click)="scrollToSection('servicios')">Conocer Más</button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Descripción del Servicio -->
-  <section class="service-description">
+  <!-- Estadísticas Section -->
+  <section class="stats-section">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6">
-          <h2>Expertos en Revisoría Fiscal</h2>
-          <p>
-            En Dialex Consultores, brindamos servicios de revisoría fiscal de alta calidad, asegurando el cumplimiento normativo y la transparencia en las operaciones de su empresa. Nuestro equipo de revisores fiscales certificados combina experiencia y conocimiento para ofrecer un servicio integral y profesional.
-          </p>
-          <div class="benefits">
-            <h3>Beneficios de nuestro servicio:</h3>
-            <ul>
-              <li>Garantía de cumplimiento normativo</li>
-              <li>Prevención de riesgos fiscales y financieros</li>
-              <li>Mejora continua de procesos internos</li>
-              <li>Respaldo profesional permanente</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="image-container">
-            <img src="assets/revisoria-hero.jpg" alt="Servicios de Revisoría Fiscal" class="img-fluid">
+        <div class="col-md-4" *ngFor="let stat of estadisticas" @fadeInUp>
+          <div class="stat-card">
+            <i [class]="stat.icono"></i>
+            <h3>{{stat.numero}}</h3>
+            <p>{{stat.texto}}</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Servicios Específicos -->
-  <section class="specific-services">
+  <!-- Descripción del Servicio -->
+  <section class="service-intro">
     <div class="container">
-      <h2 class="text-center mb-5">Nuestros Servicios de Revisoría</h2>
-      <div class="row">
-        <div class="col-md-6 col-lg-3" *ngFor="let servicio of servicios">
-          <div class="service-card">
-            <div class="icon-container">
-              <img [src]="servicio.icono" [alt]="servicio.titulo">
+      <div class="row align-items-center">
+        <div class="col-lg-6" @fadeInUp>
+          <h2 class="section-title">Expertos en Revisoría Fiscal</h2>
+          <p class="description">
+            En Dialex Consultores, nos especializamos en brindar servicios de revisoría fiscal de alta calidad. 
+            Nuestro equipo de expertos trabaja de manera proactiva para asegurar el cumplimiento normativo y 
+            la transparencia en todas las operaciones de su organización.
+          </p>
+          <div class="benefits">
+            <h3>Beneficios de nuestro servicio:</h3>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Control interno efectivo</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Cumplimiento normativo</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Prevención de riesgos</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Asesoría especializada</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6" @fadeInUp>
+          <div class="service-image">
+            <div class="image-container">
+              <i class="fas fa-balance-scale"></i>
+              <h3>Revisoría Fiscal</h3>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Section -->
+  <section id="servicios" class="services-section">
+    <div class="container">
+      <h2 class="section-title text-center" @fadeInUp>Nuestros Servicios de Revisoría</h2>
+      <div class="row">
+        <div class="col-md-6 col-lg-3" *ngFor="let servicio of servicios" @fadeInUp>
+          <div class="service-card" [style.animation-delay]="servicio.animationDelay">
+            <i [class]="servicio.icono"></i>
             <h3>{{servicio.titulo}}</h3>
             <p>{{servicio.descripcion}}</p>
           </div>
@@ -53,31 +90,45 @@
     </div>
   </section>
 
-  <!-- Por qué Elegirnos -->
-  <section class="why-choose-us">
+  <!-- Metodología Section -->
+  <section class="methodology">
     <div class="container">
-      <h2 class="text-center">¿Por qué elegir nuestros servicios de revisoría?</h2>
-      <div class="row mt-4">
-        <div class="col-md-4">
-          <div class="feature">
-            <i class="fas fa-balance-scale"></i>
-            <h3>Independencia Total</h3>
-            <p>Garantizamos objetividad en nuestras evaluaciones</p>
+      <h2 class="text-center">Nuestra Metodología</h2>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let paso of metodologia; let i = index" @fadeInUp>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i [class]="paso.icono"></i>
+            </div>
+            <h3>{{paso.fase}}</h3>
+            <p>{{paso.descripcion}}</p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="feature">
-            <i class="fas fa-check-double"></i>
-            <h3>Control Efectivo</h3>
-            <p>Supervisión constante y detallada</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="text-center mb-5">Lo que dicen nuestros clientes</h2>
+      <div class="testimonial-carousel">
+        <div class="testimonial-slide" *ngFor="let testimonio of testimonios; let i = index" 
+             [class.active]="i === currentSlide" @fadeIn>
+          <div class="testimonial-content">
+            <div class="testimonial-image">
+              <img [src]="testimonio.imagen" [alt]="testimonio.nombre">
+            </div>
+            <p class="testimonial-text">"{{testimonio.comentario}}"</p>
+            <h4>{{testimonio.nombre}}</h4>
+            <p class="testimonial-position">{{testimonio.cargo}}</p>
+            <p class="testimonial-company">{{testimonio.empresa}}</p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="feature">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Respaldo Legal</h3>
-            <p>Cumplimiento de todas las normativas vigentes</p>
-          </div>
+        <div class="testimonial-controls">
+          <button *ngFor="let _ of testimonios; let i = index" 
+                  [class.active]="i === currentSlide"
+                  (click)="goToSlide(i)"></button>
         </div>
       </div>
     </div>

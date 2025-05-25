@@ -1,50 +1,87 @@
 <div class="service-page">
   <!-- Hero Section -->
   <section class="hero-section">
-    <div class="hero-content">
-      <h1>Costos Industriales</h1>
-      <p>Optimice sus procesos y maximice la rentabilidad de su negocio</p>
+    <div class="gradient-overlay"></div>
+    <div class="container">
+      <div class="hero-content" @fadeInUp>
+        <h1>Costos Industriales</h1>
+        <p>Optimice sus procesos y maximice la rentabilidad de su negocio</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" (click)="scrollToForm()">Solicitar Consulta</button>
+          <button class="btn btn-outline-light" (click)="scrollToSection('servicios')">Conocer Más</button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Descripción del Servicio -->
-  <section class="service-description">
+  <!-- Estadísticas Section -->
+  <section class="stats-section">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6">
-          <h2>Expertos en Costos Industriales</h2>
-          <p>
-            En Dialex Consultores, proporcionamos soluciones integrales para la gestión y optimización de costos industriales. Nuestro equipo de especialistas combina experiencia práctica con conocimientos técnicos para ayudar a su empresa a maximizar la eficiencia operativa y mejorar la rentabilidad.
-          </p>
-          <div class="benefits">
-            <h3>Beneficios de nuestro servicio:</h3>
-            <ul>
-              <li>Optimización de procesos productivos</li>
-              <li>Reducción efectiva de costos operativos</li>
-              <li>Mejora en la toma de decisiones</li>
-              <li>Control eficiente de recursos</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="image-container">
-            <img src="assets/costos-hero.jpg" alt="Servicios de Costos Industriales" class="img-fluid">
+        <div class="col-md-4" *ngFor="let stat of estadisticas" @fadeInUp>
+          <div class="stat-card">
+            <i [class]="stat.icono"></i>
+            <h3>{{stat.numero}}</h3>
+            <p>{{stat.texto}}</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Servicios Específicos -->
-  <section class="specific-services">
+  <!-- Descripción del Servicio -->
+  <section class="service-intro">
     <div class="container">
-      <h2 class="text-center mb-5">Nuestros Servicios en Costos</h2>
-      <div class="row">
-        <div class="col-md-6 col-lg-3" *ngFor="let servicio of servicios">
-          <div class="service-card">
-            <div class="icon-container">
-              <img [src]="servicio.icono" [alt]="servicio.titulo">
+      <div class="row align-items-center">
+        <div class="col-lg-6" @fadeInUp>
+          <h2 class="section-title">Expertos en Costos Industriales</h2>
+          <p class="description">
+            En Dialex Consultores, nos especializamos en optimizar la gestión de costos industriales de su organización. 
+            Nuestro equipo de expertos trabaja de manera proactiva para identificar oportunidades de mejora y asegurar 
+            una estructura de costos eficiente que maximice la rentabilidad de su negocio.
+          </p>
+          <div class="benefits">
+            <h3>Beneficios de nuestro servicio:</h3>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Optimización de la estructura de costos</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Control eficiente de recursos</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Mejora de la rentabilidad</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Toma de decisiones informada</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6" @fadeInUp>
+          <div class="service-image">
+            <div class="image-container">
+              <i class="fas fa-industry"></i>
+              <h3>Costos Industriales</h3>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Section -->
+  <section id="servicios" class="services-section">
+    <div class="container">
+      <h2 class="section-title text-center" @fadeInUp>Nuestros Servicios de Costos</h2>
+      <div class="row">
+        <div class="col-md-6 col-lg-3" *ngFor="let servicio of servicios" @fadeInUp>
+          <div class="service-card" [style.animation-delay]="servicio.animationDelay">
+            <i [class]="servicio.icono"></i>
             <h3>{{servicio.titulo}}</h3>
             <p>{{servicio.descripcion}}</p>
           </div>
@@ -53,31 +90,44 @@
     </div>
   </section>
 
-  <!-- Por qué Elegirnos -->
-  <section class="why-choose-us">
+  <!-- Metodología Section -->
+  <section class="methodology">
     <div class="container">
-      <h2 class="text-center">¿Por qué elegir nuestros servicios de costos?</h2>
-      <div class="row mt-4">
-        <div class="col-md-4">
-          <div class="feature">
-            <i class="fas fa-industry"></i>
-            <h3>Experiencia Industrial</h3>
-            <p>Amplio conocimiento en diversos sectores industriales</p>
+      <h2 class="text-center">Nuestra Metodología</h2>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let paso of metodologia; let i = index" @fadeInUp>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i [class]="paso.icono"></i>
+            </div>
+            <h3>{{paso.fase}}</h3>
+            <p>{{paso.descripcion}}</p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="feature">
-            <i class="fas fa-chart-bar"></i>
-            <h3>Análisis Detallado</h3>
-            <p>Metodología probada para la optimización de costos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="text-center">Lo que dicen nuestros clientes</h2>
+      <div class="testimonial-carousel">
+        <div class="testimonial-slide" *ngFor="let testimonio of testimonios; let i = index" [class.active]="i === currentSlide">
+          <div class="testimonial-content">
+            <div class="testimonial-image">
+              <img [src]="testimonio.imagen" [alt]="'Foto de ' + testimonio.nombre">
+            </div>
+            <p class="testimonial-text">{{testimonio.comentario}}</p>
+            <h4>{{testimonio.nombre}}</h4>
+            <p class="testimonial-position">{{testimonio.cargo}}</p>
+            <p class="testimonial-company">{{testimonio.empresa}}</p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="feature">
-            <i class="fas fa-cogs"></i>
-            <h3>Soluciones Prácticas</h3>
-            <p>Recomendaciones implementables y medibles</p>
-          </div>
+        <div class="testimonial-controls">
+          <button class="dot" *ngFor="let testimonio of testimonios; let i = index" 
+                  [class.active]="i === currentSlide"
+                  (click)="goToSlide(i)"></button>
         </div>
       </div>
     </div>

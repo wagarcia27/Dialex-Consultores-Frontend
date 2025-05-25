@@ -25,116 +25,126 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ]
 })
 export class AuditoriaExternaComponent implements OnInit {
-  servicios = [
+  currentSlide = 0;
+  
+  estadisticas = [
     {
-      titulo: 'Auditoría de Estados Financieros',
-      descripcion: 'Evaluación independiente y objetiva de la información financiera.',
-      icono: 'fas fa-file-invoice',
-      animationDelay: '0s'
+      icono: 'fas fa-users',
+      numero: '500+',
+      texto: 'Clientes Satisfechos'
     },
     {
-      titulo: 'Auditoría de Cumplimiento',
-      descripcion: 'Verificación del cumplimiento de normas y regulaciones externas.',
-      icono: 'fas fa-shield-check',
-      animationDelay: '0.2s'
+      icono: 'fas fa-chart-line',
+      numero: '1000+',
+      texto: 'Auditorías Realizadas'
     },
     {
-      titulo: 'Auditoría Operativa',
-      descripcion: 'Evaluación de la eficiencia y eficacia de los procesos operativos.',
-      icono: 'fas fa-gears',
-      animationDelay: '0.4s'
-    },
-    {
-      titulo: 'Auditoría Especial',
-      descripcion: 'Revisiones específicas según requerimientos particulares.',
-      icono: 'fas fa-magnifying-glass-chart',
-      animationDelay: '0.6s'
+      icono: 'fas fa-award',
+      numero: '15+',
+      texto: 'Años de Experiencia'
     }
   ];
 
-  estadisticas = [
+  servicios = [
     {
-      numero: '98%',
-      texto: 'Satisfacción de clientes',
-      icono: 'fas fa-smile'
+      icono: 'fas fa-file-invoice',
+      titulo: 'Auditoría Financiera',
+      descripcion: 'Evaluación detallada de estados financieros y registros contables.',
+      animationDelay: '0s'
     },
     {
-      numero: '+500',
-      texto: 'Auditorías realizadas',
-      icono: 'fas fa-chart-line'
+      icono: 'fas fa-cogs',
+      titulo: 'Auditoría Operativa',
+      descripcion: 'Análisis de procesos y sistemas operativos internos.',
+      animationDelay: '0.2s'
     },
     {
-      numero: '25+',
-      texto: 'Años de experiencia',
-      icono: 'fas fa-calendar-check'
+      icono: 'fas fa-shield-alt',
+      titulo: 'Auditoría de Cumplimiento',
+      descripcion: 'Verificación del cumplimiento normativo y regulatorio.',
+      animationDelay: '0.4s'
+    },
+    {
+      icono: 'fas fa-chart-bar',
+      titulo: 'Auditoría de Gestión',
+      descripcion: 'Evaluación de la eficiencia y eficacia organizacional.',
+      animationDelay: '0.6s'
     }
   ];
 
   metodologia = [
     {
       fase: 'Planificación',
-      descripcion: 'Desarrollo de estrategia y alcance',
-      icono: 'fas fa-tasks'
+      descripcion: 'Desarrollo de un plan detallado y cronograma de auditoría.',
+      icono: 'fas fa-clipboard-list'
+    },
+    {
+      fase: 'Evaluación de Riesgos',
+      descripcion: 'Identificación y análisis de áreas críticas y riesgos potenciales.',
+      icono: 'fas fa-exclamation-triangle'
     },
     {
       fase: 'Ejecución',
-      descripcion: 'Aplicación de procedimientos',
-      icono: 'fas fa-cogs'
+      descripcion: 'Realización de procedimientos de auditoría y recopilación de evidencia.',
+      icono: 'fas fa-tasks'
     },
     {
-      fase: 'Evaluación',
-      descripcion: 'Análisis de resultados',
-      icono: 'fas fa-chart-bar'
+      fase: 'Análisis y Conclusiones',
+      descripcion: 'Evaluación de hallazgos y formulación de conclusiones.',
+      icono: 'fas fa-search'
     },
     {
-      fase: 'Informe',
-      descripcion: 'Presentación de hallazgos',
+      fase: 'Reporte Final',
+      descripcion: 'Presentación de resultados y recomendaciones detalladas.',
       icono: 'fas fa-file-alt'
     }
   ];
 
-  currentSlide = 0;
   testimonios = [
     {
       nombre: 'Carlos Rodríguez',
       cargo: 'Director Financiero',
-      empresa: 'Industrias XYZ',
-      comentario: 'El equipo de auditoría externa demostró un alto nivel de profesionalismo y conocimiento.',
-      imagen: 'https://placehold.co/400x400/3f89d3/ffffff?text=CR'
+      empresa: 'Grupo Industrial XYZ',
+      comentario: 'El equipo de Dialex Consultores demostró un alto nivel de profesionalismo y conocimiento en la auditoría de nuestra empresa.'
     },
     {
       nombre: 'Ana Martínez',
       cargo: 'Gerente General',
       empresa: 'Comercial ABC',
-      comentario: 'Los resultados de la auditoría nos ayudaron a mejorar significativamente nuestros procesos.',
-      imagen: 'https://placehold.co/400x400/dc3545/ffffff?text=AM'
+      comentario: 'La metodología de trabajo y el compromiso con la calidad nos ayudaron a mejorar significativamente nuestros procesos internos.'
     },
     {
-      nombre: 'Luis Pérez',
+      nombre: 'Luis Sánchez',
       cargo: 'Controller',
-      empresa: 'Grupo Empresarial 123',
-      comentario: 'Excelente servicio y atención a los detalles en todo el proceso de auditoría.',
-      imagen: 'https://placehold.co/400x400/3f89d3/ffffff?text=LP'
+      empresa: 'Industrias DEF',
+      comentario: 'Excelente servicio y atención personalizada. Los resultados superaron nuestras expectativas.'
     }
   ];
 
+  constructor() { }
+
+  ngOnInit(): void {
+    // Iniciar el carrusel de testimonios
+    setInterval(() => {
+      this.currentSlide = (this.currentSlide + 1) % this.testimonios.length;
+    }, 5000);
+  }
+
+  getInitials(name: string): string {
+    return name
+      .split(' ')
+      .map(n => n[0])
+      .join('')
+      .toUpperCase();
+  }
+
   scrollToForm() {
-    const formElement = document.getElementById('contact-form');
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    const element = document.querySelector('app-contact-form');
+    element?.scrollIntoView({ behavior: 'smooth' });
   }
 
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  ngOnInit() {
-    setInterval(() => {
-      this.currentSlide = (this.currentSlide + 1) % this.testimonios.length;
-    }, 5000);
+    element?.scrollIntoView({ behavior: 'smooth' });
   }
 }

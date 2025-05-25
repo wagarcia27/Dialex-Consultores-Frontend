@@ -33,181 +33,110 @@ $light-bg: #f8f9fa;
   overflow-x: hidden;
 }
 
-// Hero Section con Gradiente Animado
+// Hero Section
 .hero-section {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
-  color: white;
+  height: 500px;
+  background: linear-gradient(45deg, #4a1958, #916dd5);
+  display: flex;
+  align-items: center;
   overflow: hidden;
 
-  .gradient-background {
+  .gradient-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(-45deg, $secondary-color, $primary-color, #2c3e50, #2980b9);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-    z-index: -1;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.3);
-    }
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(74, 25, 88, 0.9), rgba(145, 109, 213, 0.9));
+    animation: gradientAnimation 10s ease infinite;
   }
 
   .hero-content {
     position: relative;
     z-index: 2;
+    color: white;
     text-align: center;
-    padding: 0 20px;
     max-width: 800px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
+    padding: 0 20px;
 
     h1 {
-      font-size: 4rem;
+      font-size: 3.5rem;
       font-weight: 700;
       margin-bottom: 1.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       margin-bottom: 2rem;
       opacity: 0.9;
     }
 
-    .hero-cta {
+    .hero-buttons {
       display: flex;
       gap: 1rem;
       justify-content: center;
 
       .btn {
-        padding: 1rem 2rem;
+        padding: 0.8rem 2rem;
         font-size: 1.1rem;
+        border-radius: 50px;
         transition: all 0.3s ease;
-        cursor: pointer;
 
         &:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+          transform: translateY(-2px);
         }
       }
     }
   }
 }
 
-// Estadísticas Animadas
-.statistics {
+// Stats Section
+.stats-section {
   padding: 4rem 0;
-  background: white;
+  background-color: white;
 
   .stat-card {
     text-align: center;
     padding: 2rem;
-    animation: countUp 1s ease-out forwards;
+    transition: all 0.3s ease;
 
     i {
-      font-size: 3rem;
-      color: $secondary-color;
+      font-size: 2.5rem;
+      color: $primary-color;
       margin-bottom: 1rem;
     }
 
     h3 {
       font-size: 2.5rem;
-      color: $primary-color;
+      color: $secondary-color;
       margin-bottom: 0.5rem;
+      font-weight: 700;
     }
 
     p {
       color: $text-color;
       font-size: 1.1rem;
     }
-  }
-}
 
-// Descripción del Servicio con Parallax
-.service-description {
-  padding: 6rem 0;
-  background-attachment: fixed;
-  background-size: cover;
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255,255,255,0.95);
-  }
-
-  .container {
-    position: relative;
-  }
-
-  h2 {
-    color: $secondary-color;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-  }
-
-  p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: $text-color;
-  }
-
-  .benefits {
-    margin-top: 2rem;
-
-    h3 {
-      color: $primary-color;
-      margin-bottom: 1.5rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-
-      li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-
-        i {
-          color: $secondary-color;
-          margin-right: 1rem;
-          font-size: 1.2rem;
-        }
-      }
-    }
-  }
-
-  .image-container {
-    &.floating {
-      animation: float 6s ease-in-out infinite;
+    &:hover {
+      transform: translateY(-5px);
     }
   }
 }
 
-// Servicios Específicos con Hover Effects
-.specific-services {
-  padding: 6rem 0;
+// Services Section
+.services-section {
+  padding: 4rem 0;
   background-color: $light-bg;
+
+  .section-title {
+    margin-bottom: 3rem;
+    color: $text-color;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
 
   .service-card {
     background: white;
@@ -215,37 +144,13 @@ $light-bg: #f8f9fa;
     border-radius: 10px;
     text-align: center;
     height: 100%;
-    position: relative;
-    overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 
-    &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-
-      .service-hover {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .icon-container i {
-        transform: scale(1.1);
-        color: $primary-color;
-      }
-    }
-
-    .icon-container {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 1.5rem;
-      transition: transform 0.3s ease;
-
-      i {
-        font-size: 3rem;
-        color: $secondary-color;
-        transition: all 0.3s ease;
-      }
+    i {
+      font-size: 2.5rem;
+      color: $primary-color;
+      margin-bottom: 1.5rem;
     }
 
     h3 {
@@ -256,20 +161,13 @@ $light-bg: #f8f9fa;
 
     p {
       color: $text-color;
-      font-size: 0.95rem;
+      font-size: 1rem;
       line-height: 1.6;
     }
 
-    .service-hover {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.8));
-      padding: 2rem;
-      opacity: 0;
-      transform: translateY(100%);
-      transition: all 0.3s ease;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     }
   }
 }
@@ -297,32 +195,48 @@ $light-bg: #f8f9fa;
     }
 
     .timeline-item {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       position: relative;
       width: 50%;
       padding: 0 2rem;
 
       &:nth-child(odd) {
         left: 0;
-        .timeline-content { text-align: right; }
+        .timeline-content { 
+          text-align: right;
+          padding: 2rem;
+          padding-left: 100px;
+
+          .timeline-icon {
+            left: 20px;
+          }
+        }
       }
 
       &:nth-child(even) {
         left: 50%;
-        .timeline-content { text-align: left; }
+        .timeline-content { 
+          text-align: left;
+          padding: 2rem;
+          padding-right: 100px;
+
+          .timeline-icon {
+            right: 20px;
+          }
+        }
       }
 
       .timeline-content {
         background: white;
-        padding: 2rem;
         border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         position: relative;
+        overflow: hidden;
 
         .timeline-icon {
-          width: 50px;
-          height: 50px;
-          background: $secondary-color;
+          width: 60px;
+          height: 60px;
+          background: $primary-color;
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -338,13 +252,15 @@ $light-bg: #f8f9fa;
         }
 
         h3 {
-          color: $primary-color;
+          color: $secondary-color;
           margin-bottom: 1rem;
+          font-size: 1.5rem;
         }
 
         p {
           color: $text-color;
           margin: 0;
+          line-height: 1.6;
         }
       }
     }
@@ -378,11 +294,15 @@ $light-bg: #f8f9fa;
         overflow: hidden;
         border: 5px solid white;
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        background-color: $primary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+        .initials {
+          color: white;
+          font-size: 2.5rem;
+          font-weight: 600;
         }
       }
 
@@ -428,101 +348,132 @@ $light-bg: #f8f9fa;
           background: $primary-color;
           transform: scale(1.2);
         }
-      }
-    }
-  }
-}
 
-// CTA Final
-.cta-section {
-  padding: 6rem 0;
-  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-              url('/assets/cta-bg.jpg') center/cover no-repeat;
-  color: white;
-  text-align: center;
+        &:hover {
+          background: darken(#ddd, 10%);
+        }
 
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-  }
-
-  .btn {
-    padding: 1rem 3rem;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255,255,255,0.2);
-    }
-  }
-}
-
-// Placeholder para la imagen principal
-.placeholder-image {
-  background: linear-gradient(135deg, $primary-color, darken($primary-color, 20%));
-  border-radius: 10px;
-  padding: 3rem;
-  text-align: center;
-  color: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-
-  i {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  span {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-}
-
-// Responsive Styles
-@media (max-width: 991.98px) {
-  .hero-section {
-    height: 80vh;
-
-    .hero-content {
-      h1 {
-        font-size: 3rem;
-      }
-
-      p {
-        font-size: 1.2rem;
-      }
-    }
-  }
-
-  .methodology {
-    .timeline {
-      &::before {
-        left: 0;
-      }
-
-      .timeline-item {
-        width: 100%;
-        left: 0 !important;
-        padding-left: 3rem;
-
-        .timeline-content {
-          text-align: left !important;
+        &:focus {
+          outline: none;
         }
       }
     }
   }
 }
 
-@media (max-width: 767.98px) {
+// Service Intro Section
+.service-intro {
+  padding: 5rem 0;
+  background-color: white;
+
+  .section-title {
+    color: $primary-color;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $text-color;
+    margin-bottom: 2rem;
+  }
+
+  .benefits {
+    background-color: $light-bg;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      color: $secondary-color;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        i {
+          color: $primary-color;
+          font-size: 1.2rem;
+          margin-right: 1rem;
+        }
+
+        span {
+          color: $text-color;
+        }
+      }
+    }
+  }
+
+  .service-image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image-container {
+      background-color: $primary-color;
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      i {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Responsive Styles
+@media (max-width: 991.98px) {
   .hero-section {
-    height: 60vh;
+    height: 400px;
 
     .hero-content {
       h1 {
@@ -530,31 +481,146 @@ $light-bg: #f8f9fa;
       }
 
       p {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
 
-      .hero-cta {
+      .hero-buttons {
         flex-direction: column;
         gap: 1rem;
+
+        .btn {
+          width: 100%;
+        }
       }
     }
   }
 
-  .statistics {
+  .methodology {
+    .timeline {
+      &::before {
+        left: 50px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding: 0 1rem;
+
+        .timeline-content {
+          text-align: right !important;
+          padding: 2rem !important;
+          padding-left: 100px !important;
+
+          .timeline-icon {
+            left: 20px !important;
+            right: auto !important;
+          }
+        }
+      }
+    }
+  }
+
+  .service-intro {
+    padding: 3rem 0;
+
+    .service-image {
+      margin-top: 2rem;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-section {
+    height: 350px;
+
+    .hero-content {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .stats-section {
     .stat-card {
       margin-bottom: 2rem;
     }
   }
 
-  .service-description {
-    .image-container {
-      margin-top: 2rem;
+  .services-section {
+    .service-card {
+      margin-bottom: 2rem;
     }
   }
 
-  .specific-services {
-    .service-card {
-      margin-bottom: 2rem;
+  .testimonials {
+    padding: 4rem 0;
+
+    .testimonial-carousel {
+      .testimonial-slide {
+        .testimonial-image {
+          width: 100px;
+          height: 100px;
+        }
+
+        .testimonial-text {
+          font-size: 1.1rem;
+        }
+
+        h4 {
+          font-size: 1.1rem;
+        }
+
+        .testimonial-position,
+        .testimonial-company {
+          font-size: 0.9rem;
+        }
+      }
+
+      .testimonial-controls {
+        button {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+  }
+
+  .service-intro {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+
+    .benefits {
+      padding: 1.5rem;
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      ul li {
+        font-size: 1rem;
+      }
+    }
+
+    .service-image .image-container {
+      width: 250px;
+      height: 250px;
+
+      i {
+        font-size: 4rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
     }
   }
 } 
